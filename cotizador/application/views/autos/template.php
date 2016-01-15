@@ -246,9 +246,8 @@
 
 
 
-
-<!--<div  class="">
-    <div  style="width:100%; height:140px; overflow: scroll;">
+<div  class="" id="resultados1">
+   <!--<div  style="width:100%; height:140px; overflow: scroll;">
             <div class="tab-content" id="resultados1">-->
 
 <?
@@ -283,7 +282,7 @@
             $consulta_coberturas_especiales=$r17[$iteracion];
             $consulta_coberturas_especiales_b=$r18[$iteracion];
             $consulta_coberturas_especiales_c=$r19[$iteracion];
-           //$prima_basico_total=12345;
+       //    $prima_basico_total=12345;
 
             switch ($nombre_aseguradora){
                 case "Internacional de Seguros":?>
@@ -782,8 +781,12 @@ Div de cierre del tabs
 
      Div 2 de cierre del scroll
 
-    </div>
-</div> -->
+    </div>-->
+</div>
+
+
+    <div  class="" id="resultados2">
+        </div>
     <script language="JavaScript">
         var maximo=<?=$iteracion?>;
         var contador=1;
@@ -871,7 +874,7 @@ Div de cierre del tabs
         $consulta_coberturas_especiales=$r17[$iteracion];
         $consulta_coberturas_especiales_b=$r18[$iteracion];
         $consulta_coberturas_especiales_c=$r19[$iteracion];
-        //$prima_basico_total=12345;
+       //$prima_basico_total=12345;
         ?>
 
 
@@ -1238,7 +1241,7 @@ $iteracion++;
                 <select tabindex="5" required name="anio_auto" class="form-control">
                     <option>Año del Veh&iacute;culo</option>
                    <? $anioA=date('Y');
-                    for($i=2004; $i<=$anioA; $i++){?>
+                    for($i=$anioA; $i>=2004; $i--){?>
                         <option value="<?=$i?>"><?=$i?></option>
                     <?}?>
                 </select>
