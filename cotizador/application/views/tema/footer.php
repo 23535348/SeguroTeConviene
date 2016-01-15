@@ -139,11 +139,9 @@
 </script>
 <script>
 
-        $("#datepicker" ).datepicker({
-                changeMonth: true,
-                changeYear: true
-            }
-        );
+        $("#datepicker" ).datepicker(  );
+
+
 
 </script>
 <script type="text/javascript">
