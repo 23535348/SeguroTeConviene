@@ -247,9 +247,9 @@
 
 
 
-<div  class="">
+<!--<div  class="">
     <div  style="width:100%; height:140px; overflow: scroll;">
-            <!--<div class="tab-content" id="resultados1">-->
+            <div class="tab-content" id="resultados1">-->
 
 <?
 
@@ -781,9 +781,9 @@ Div de cierre del tabs
 
 
      Div 2 de cierre del scroll
-        -->
+
     </div>
-</div>
+</div> -->
     <script language="JavaScript">
         var maximo=<?=$iteracion?>;
         var contador=1;
@@ -1120,7 +1120,7 @@ $iteracion++;
                         </div>
                             <div class="col-xs-12" style="margin-bottom:16px;">
                                 <div class="">
-                                    <input  id="datepicker" class="form-control" type="text" placeholder="Fec.Nac: dd/mm/aaaa " name="fecha_nac" tabindex="5" required="">
+                                    <input  id="datepicker" class="form-control" type="text" placeholder="Fec.Nac: dd/mm/aaaa "  data-date-format="dd/mm/yyyy" name="fecha_nac" tabindex="5" required="">
 
 
                                     <!--  <div id="dateP" class="picker" style="display: none"></div><input name="form[formula][GBDAT]" class="picker" id="Nacimiento" required type="text"
