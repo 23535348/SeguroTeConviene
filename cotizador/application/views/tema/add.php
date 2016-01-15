@@ -148,6 +148,7 @@
         document.getElementById('personal').style.display = 'none';
         document.getElementById('vehiculo').style.display = 'none';
         document.getElementById('TerminosCondiciones').style.display = 'block';
+        document.getElementById("TerminosCondiciones").scrollIntoView();
         return true;
     }
 
@@ -155,12 +156,14 @@
         document.getElementById('personal').style.display = 'none';
         document.getElementById('vehiculo').style.display = 'block';
         document.getElementById('TerminosCondiciones').style.display = 'none';
+        document.getElementById("personal").scrollIntoView();
         return true;
     }
     function DesactivarTerminos2(){
         document.getElementById('personal').style.display = 'block';
         document.getElementById('vehiculo').style.display = 'none';
         document.getElementById('TerminosCondiciones').style.display = 'none';
+        document.getElementById("personal").scrollIntoView();
         return true;
     }
 
