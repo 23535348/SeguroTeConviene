@@ -1,0 +1,367 @@
+/* === color === */
+
+a, a:hover,a:focus,a:active, footer a.text-link:hover, strike, .post-meta span a:hover, footer a.text-link, 
+ul.meta-post li a:hover, ul.cat li a:hover, ul.recent li h6 a:hover, ul.portfolio-categ li.active a, ul.portfolio-categ li.active a:hover, ul.portfolio-categ li a:hover,ul.related-post li h4 a:hover, span.highlight,article .post-heading h3 a:hover,
+.navbar .nav > .active > a,.navbar .nav > .active > a:hover,.navbar .nav > li > a:hover,.navbar .nav > li > a:focus,.navbar .nav > .active > a:focus, .validation  { 
+	color:#e87b00;
+	/*#68A4C4;*/
+}
+
+.navbar-brand span{
+    color:#e87b00; /*#68A4C4;*/
+}
+
+header .nav li a:hover,
+header .nav li a:focus,
+header .nav li.active a,
+header .nav li.active a:hover,
+header .nav li a.dropdown-toggle:hover,
+header .nav li a.dropdown-toggle:focus,
+header .nav li.active ul.dropdown-menu li a:hover,
+header .nav li.active ul.dropdown-menu li.active a{
+	color: #e87b00; /*#68A4C4;*/
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #e87b00; /*#68A4C4;*/
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+	color: #e87b00; /*#68A4C4;*/
+}	
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+	color:#e87b00; /*#68A4C4;*/
+}
+/* === background color === */
+
+.custom-carousel-nav.right:hover, .custom-carousel-nav.left:hover, 
+.dropdown-menu li:hover,
+.dropdown-menu li a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:hover > a, 
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover,
+.pagination ul > .active > a:hover,
+.pagination ul > .active > a,
+.pagination ul > .active > span,
+.flex-control-nav li a:hover, 
+.flex-control-nav li a.active {
+  background-color: #e87b00; /*#68A4C4;*/
+}
+
+
+.breadcrumb {
+  background-color: #e87b00; /*#68A4C4;*/
+}
+
+/* === border color === */
+.pagination ul > li.active > a,
+.pagination ul > li.active > span, a.thumbnail:hover, input[type="text"].search-form:focus {
+	border:1px solid  #e87b00; /*#68A4C4;*/
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color:  #e87b00; /*#68A4C4;*/
+}
+
+input:focus {
+	border-color: #e87b00; /*#68A4C4;*/
+}
+
+
+#sendmessage {
+	color: #e87b00; /*#68A4C4;*/
+}
+
+.pullquote-left {
+	border-left:5px solid #e87b00; /*#68A4C4;*/
+}
+
+.pullquote-right {
+	border-right:5px solid #e87b00; /*#68A4C4;*/
+}
+
+/* cta */
+
+.cta-text h2 span {
+	color: #e87b00; /*#68A4C4;*/
+}
+
+ul.clients li:hover {
+	border:4px solid #e87b00; /*#68A4C4;*/
+}
+
+/* box */
+.box-bottom {
+	background: #e87b00; /*#68A4C4;*/
+}
+
+/* buttons */
+.btn-dark:hover,.btn-dark:focus,.btn-dark:active  {
+  background: #e87b00; /*#68A4C4;*/
+  border:1px solid #e87b00; /*#68A4C4;*/
+}
+
+.btn-theme {
+  border:1px solid #e87b00; /*#68A4C4;*/
+  background: #e87b00; /*#68A4C4;*/
+}
+
+/* modal styled */
+.modal.styled .modal-header {
+  background-color:#e87b00; /*#68A4C4;*/
+}
+
+
+/* blog */
+.post-meta {
+	border-top:4px solid #e87b00; /*#68A4C4;*/
+}
+
+.post-meta .comments a:hover  {
+	color:#e87b00; /*#68A4C4;*/
+}
+
+.widget ul.tags li a:hover {
+	background: #e87b00; /*#68A4C4;*/
+}
+
+.recent-post .text h5 a:hover{
+	color:#e87b00; /*#68A4C4;*/
+}
+
+/* pricing box */
+
+.pricing-box-alt.special .pricing-heading {
+	background: #e87b00; /*#68A4C4;*/
+}
+
+
+/* portfolio */
+.item-thumbs .hover-wrap .overlay-img-thumb {
+	background: #e87b00; /*#68A4C4;*/
+}
+
+
+/* pagination */
+#pagination a:hover {
+    background:#e87b00; /*#68A4C4;*/
+}
+
+/* pricing box */
+.pricing-box.special .pricing-offer{
+	background: #e87b00; /*#68A4C4;*/
+}
+
+
+/* fontawesome icons */
+.icon-square:hover,
+.icon-rounded:hover,
+.icon-circled:hover {
+    background-color: #e87b00; /*#68A4C4;*/
+}
+[class^="icon-"].active,
+[class*=" icon-"].active {
+    background-color: #e87b00; /*#68A4C4;*/
+}
+
+/* fancybox */
+.fancybox-close:hover {
+	background-color:#e87b00; /*#68A4C4;*/
+}
+.fancybox-nav:hover span {
+	background-color:#e87b00; /*#68A4C4;*/
+}
+
+/* parallax c slider */
+.da-slide .da-link:hover{
+	background: #e87b00; /*#68A4C4;*/
+	border: 4px solid #e87b00; /*#68A4C4;*/
+}
+
+.da-dots span{
+	background: #e87b00; /*#68A4C4;*/
+}
+
+/* flexslider */
+#featured .flexslider .slide-caption {
+	border-left:5px solid #e87b00; /*#68A4C4;*/
+}
+
+/* Nivo slider */
+.nivo-directionNav a:hover {
+    background-color: #e87b00; /*#68A4C4;*/
+}
+.nivo-caption, .caption {
+	border-bottom: #e87b00 /*#68A4C4;*/ 5px solid;
+}
+
+/* footer */
+footer{
+	background: #383838; /*#e87b00; #68A4C4;*/
+}
+#sub-footer{
+	background: #383838; /* #e87b00; /*#68A4C4;*/
+}
+
+.gris {
+	background-color: #ececec;
+	color: #797979;
+	font-size: 35px;
+	font-weight: bold;
+	padding-bottom: 35px;
+	padding-top: 35px;
+	text-align: center;
+	width: 100%;
+}
+.btn-siguiente {
+	background-color:#e87b00;
+	border-color: #e87b00;
+	color: #fff;
+	margin-top:10px;
+	color: #fff;
+	text-align: center;
+
+}
+.btn-tema{
+	background-color:#428bca;
+	border-color: #428bca;
+	color: #fff;
+	margin-top:10px;
+	color: #fff;
+}
+
+.btn-titulo{
+	background-color:#428bca;
+	border-color: #428bca;
+	color: #fff;
+
+}
+
+.gris_letras {
+
+	color: #797979;
+	font-size: 35px;
+	font-weight: bold;
+
+	text-align: center;
+	width: 100%;
+}
+
+
+/* Por debajo de 700px */
+@media screen and (max-width: 700px){
+
+
+	.gris{
+
+		font-size:18px;
+
+	}
+	.gris_letras{
+
+		font-size:18px;
+
+	}
+
+}
+/* Por debajo de 400px */
+@media screen and (max-width: 400px){
+
+
+	.gris{
+
+		font-size:16px;
+
+	}
+	.gris_letras{
+
+		font-size:16px;
+
+	}
+
+
+}
+
+/* cols xs-mod */
+
+.col-xs-1-mod,.col-xs-10-mod,.col-xs-11-mod,.col-xs-12-mod,.col-xs-2-mod,.col-xs-3-mod,.col-xs-4-mod,.col-xs-5-mod,.col-xs-6-mod,.col-xs-7-mod,.col-xs-8-mod,.col-xs-9-mod
+{
+	position:relative;
+	min-height:1px;
+	padding-right:1px;
+	padding-left:1px
+}
+
+.col-xs-1-mod,.col-xs-10-mod,.col-xs-11-mod,.col-xs-12-mod,.col-xs-2-mod,.col-xs-3-mod,.col-xs-4-mod,.col-xs-5-mod,.col-xs-6-mod,.col-xs-7-mod,.col-xs-8-mod,.col-xs-9-mod
+{float:left}
+.col-xs-12-mod{width:100%}
+.col-xs-11-mod{width:91.66666667%}
+.col-xs-10-mod{width:83.33333333%}
+.col-xs-9-mod{width:75%}
+.col-xs-8-mod{width:66.66666667%}
+.col-xs-7-mod{width:58.33333333%}
+.col-xs-6-mod{width:50%}
+.col-xs-5-mod{width:41.66666667%}
+.col-xs-4-mod{width:33.33333333%}
+.col-xs-3-mod{width:25%}
+.col-xs-2-mod{width:16.66666667%}
+.col-xs-1-mod{width:8.33333333%}
+.col-xs-pull-12-mod{right:100%}
+.col-xs-pull-11-mod{right:91.66666667%}
+.col-xs-pull-10{right:83.33333333%}
+.col-xs-pull-9{right:75%}
+.col-xs-pull-8{right:66.66666667%}
+.col-xs-pull-7{right:58.33333333%}
+.col-xs-pull-6{right:50%}
+.col-xs-pull-5{right:41.66666667%}
+.col-xs-pull-4{right:33.33333333%}
+.col-xs-pull-3{right:25%}
+.col-xs-pull-2{right:16.66666667%}
+.col-xs-pull-1{right:8.33333333%}
+.col-xs-pull-0{right:auto}
+.col-xs-push-12{left:100%}
+.col-xs-push-11{left:91.66666667%}
+.col-xs-push-10{left:83.33333333%}
+.col-xs-push-9{left:75%}
+.col-xs-push-8{left:66.66666667%}
+.col-xs-push-7{left:58.33333333%}
+.col-xs-push-6{left:50%}
+.col-xs-push-5{left:41.66666667%}
+.col-xs-push-4{left:33.33333333%}
+.col-xs-push-3{left:25%}
+.col-xs-push-2{left:16.66666667%}
+.col-xs-push-1{left:8.33333333%}
+.col-xs-push-0{left:auto}
+.col-xs-offset-12{margin-left:100%}
+.col-xs-offset-11{margin-left:91.66666667%}
+.col-xs-offset-10{margin-left:83.33333333%}
+.col-xs-offset-9{margin-left:75%}
+.col-xs-offset-8{margin-left:66.66666667%}
+.col-xs-offset-7{margin-left:58.33333333%}
+.col-xs-offset-6{margin-left:50%}
+.col-xs-offset-5{margin-left:41.66666667%}
+.col-xs-offset-4{margin-left:33.33333333%}
+.col-xs-offset-3{margin-left:25%}
+.col-xs-offset-2{margin-left:16.66666667%}
+.col-xs-offset-1{margin-left:8.33333333%}
+.col-xs-offset-0{margin-left:0}
