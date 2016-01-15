@@ -16,10 +16,9 @@
     <link rel="stylesheet" href="<?=$url?>css/jquery.picMarque.css">
     <link rel="shortcut icon" type="image/x-icon" href="<?=$url?>img/favicono.ico">
     <link rel="stylesheet" href="<?=$url?>skins/default.css">
-    <link rel="stylesheet" href="<?=$url?>cotizador/css/datepicker/datepicker.css">
+    <link rel="stylesheet" href="<?=$url?>cotizador/css/bootstrap-datetimepicker.css"> 
 
-
-
+  
     <link href='<?=$url?>icons/css/bootstrap-glyphicons.css' rel='stylesheet' type='text/css'>
 
     <!--
@@ -32,7 +31,10 @@
     -->
 
     <script src="<?=$url?>js/jquery-1.10.1.min.js"></script>
-    <script src="<?=$url?>cotizador/js/datepicker/bootstrap-datepicker.js"></script>
+    <script src="<?=$url?>cotizador/js/moment-with-locales-290.js"></script>
+    <script src="<?=$url?>cotizador/js/bootstrap.min.js"></script>
+    <script src="<?=$url?>cotizador/js/bootstrap-datetimepicker.min.js"></script>
+    
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]><script src="<?=$url?>cotizador/js/jquery-ui.js"></script>
