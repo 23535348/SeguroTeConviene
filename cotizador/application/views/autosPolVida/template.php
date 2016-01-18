@@ -1,4 +1,5 @@
 <?php $this->load->view('tema/header2.php'); ?>
+<?php $this->load->view('tema/js_poliza_vida.php'); ?>
 <?php $this->load->view('tema/add.php'); ?>
 
     <script>
@@ -18,21 +19,18 @@
         });*/
     </script>
 <?php $url=base_url();?>
-    <section id="featured">
+    <section id="featured" class="ocultar">
         <!-- start slider -->
         <div class="container">
+            
             <div class="row">
-                <div class="col-lg-12">
-                    <!-- Slider -->
-
-                    <div class="gris">
+                <div class="col-xs-12">
+                    <div class="gris_letras">
                         Cotización de Póliza de Vida
                     </div>
 
-                    <!-- end slider -->
                 </div>
             </div>
-        </div>
 
 
 
@@ -74,63 +72,55 @@ border-bottom-left-radius: 5px;">
 
 
 
-<? if(isset($_POST['sesion_cotizacion'])){
-    if($_POST['sesion_cotizacion']==1){ $variableStyle="";?>
+<? if(isset($brandon)){
+    if($brandon==1){ $variableStyle="";?>
+    <div id="divDatosPersonales" class="ocultar" >
+    
+        <div class="row" align="center">
+        <div class="col-xs-12">
+            <div id=1 class="col-xs-6">
+            <div style="">
+                <img src="<?= $url ?>img/1_select.png">
 
-    <div class="row" align="center">
-        <div class="col-lg-12">
-            <div  class="col-lg-2">
+            </div>
+            </div>
+            <div id=2 class="col-xs-6">
+            <div>
+                <img src="<?= $url ?>img/2_select.png">
 
             </div>
-            <div id=1 class="col-lg-4">
-            <div style="background-color:#e87b00;width:100%;padding:8px;display:inline-block;-webkit-border-top-left-radius: 5px;
--webkit-border-bottom-left-radius: 5px;
--moz-border-radius-topleft: 5px;
--moz-border-radius-bottomleft: 5px;
-border-top-left-radius: 5px;
-border-bottom-left-radius: 5px;">
-                <img src="<?= $url ?>img/1.png">
-                <b>DATOS PERSONALES</b>
-            </div>
-            </div>
-            <div id=2 class="col-lg-4">
-            <div style="background-color:#e87b00;width:100%;padding:8px;display:inline-block;">
-                <img src="<?= $url ?>img/2.png">
-                <b>CONTRATAR SU SEGURO</b>
-            </div>
-            </div>
-            <div  class="col-lg-2">
-
             </div>
 
 
             </div>
         </div>
+    </div>
 
 <?}}else{
     $variableStyle='display:none';
     ?>
-    <div id="divDatosPersonales" >
-    <div class="row" align="center">
+    <div id="divDatosPersonales" class="ocultar" >
+    
+        <div class="row" align="center">
         <div class="col-xs-12">
-
             <div id=1 class="col-xs-6">
-                <div style="">
-                    <img class="img-responsive" src="<?= $url ?>img/1_select.png">
-                    
-                </div>
+            <div style="">
+                <img src="<?= $url ?>img/1_select.png">
+
+            </div>
             </div>
             <div id=2 class="col-xs-6">
-                <div style="">
-                    <img class="img-responsive"  src="<?= $url ?>img/2_no_select.png">
-                </div>
+            <div>
+                <img src="<?= $url ?>img/2_no_select.png">
+
+            </div>
             </div>
 
 
-
+            </div>
         </div>
     </div>
-    </div>
+    
     <?}  setlocale(LC_MONETARY, 'en_US');?>
 
 
@@ -147,7 +137,7 @@ border-bottom-left-radius: 5px;">
                 <div class="col-lg-8">
                     <div class="row" >
 
-                <div class="col-lg-12 table table-bordered">
+                <div class="col-lg-12 table table-bordered ocultar">
                     <div class="row" align="center">
                         <div class="col-lg-12 basico" style="color:#fff; font-weight:bold;">
                             Informaci&oacute;n General
@@ -193,7 +183,7 @@ border-bottom-left-radius: 5px;">
         </div>
 
 
-    <div id="aseguradorasn">
+        <tr>
 
             <?php
 
@@ -202,72 +192,72 @@ border-bottom-left-radius: 5px;">
             $idaseguradora = $tabla_resultados_aseguradora[$iteracion];
             $nombre_aseguradora = $tabla_resultados1[$iteracion];
             $prima_planeada = $tabla_resultados2[$iteracion];
-            $prima_planeada=1;
+           // $prima_planeada=1;
 
             ?>
 
-            
+            <td width="50%">
 
 
 
-                <div style="margin: 0 auto 0 auto; " >
-                    <div class="row" >
+                <div style="margin: 20px auto 0 auto; " class="ocultar well" >
+                    <div class="row" style="margin: 0 auto 0 auto; ">
                         <div class="col-xs-12">
                             <?php
                             switch ($nombre_aseguradora) {
                                 case "Internacional de Seguros":
                                     ?>
-                                    
+                                    <td align="Center" width="25%">
                                         <div class="col-xs-12" style="text-align:Center;"><img src="<?=$url?>img/logos/iseguros133.png"></div>
-                                    
+                                    </td>
                                     <?php
                                     $logo_compania_seguros = "<img src='".$url."img/logos/iseguros133.png'>";
                                     break;
                                 case "Generali" :
                                     ?>
-                                    
+                                    <td align="Center" width="25%">
                                         <div style="text-align:Center;"><img src="<?=$url?>img/logos/generali.png"></div>
-                                    
+                                    </td>
                                     <?php
                                     $logo_compania_seguros = "<img src='".$url."img/logos/generali.png'>";
                                     break;
                                 case "ASSA":
                                     ?>
-                                  
+                                    <td align="Center" width="25%">
                                         <div style="text-align:Center;"><img src="<?=$url?>img/logos/assa.png"></div>
-                                   
+                                    </td>
                                     <?php
                                     $logo_compania_seguros = "<img src='".$url."img/logos/assa.png'>";
                                     break;
                                 case "Banesco":
                                     ?>
-                                    
+                                    <td align="Center" width="25%">
                                         <div style="text-align:Center;"><img src="<?=$url?>img/logos/banesco.png"></div>
-                                    
+                                    </td>
                                     <?php
                                     $logo_compania_seguros = "<img src='".$url."img/logos/banesco.png'>";
                                     break;
                                 case "Acerta":
                                     ?>
-                                    
+                                    <td align="Center" width="25%">
                                         <div style="text-align:Center;"><img src="<?=$url?>img/logos/acerta.png"></div>
-                                    
+                                    </td>
                                     <?php
                                     $logo_compania_seguros = "<img src='".$url."img/logos/acerta.png'>";
                                     break;
                                 case "Banistmo":
                                     ?>
-                                    
+                                    <td align="Center" width="25%">
                                         <div style="text-align:Center;"><img src="<?=$url?>img/logos/HSBC_Seguros.png"></div>
-                                    
+                                    </td>
                                     <?php
                                     $logo_compania_seguros = "<img src='".$url."img/logos/HSBC_Seguros.png'>";
                                     break;
                                 case "SURA":
                                     ?>
-                                    
+                                    <td align="Center" width="25%">
                                         <div style="text-align:Center;"><img src="<?=$url?>img/logos/sura.png"></div>
-                                    
+                                    </td>
                                     <?php
                                     $logo_compania_seguros = "<img src='".$url."img/logos/sura.png'>";
                                     break;
@@ -367,9 +357,9 @@ border-bottom-left-radius: 5px;">
                                 <?php }
                                 else { ?>
 
-                                    <a style="color:#1E90FF; text-decoration:none;" data-toggle="modal"
-                                       href="#myModal<?php $y = $y + 1;
-                                       echo $y; ?>">Mas informaci&oacute;n</a>
+                                       <a style="color:#1E90FF; text-decoration:none;"  href="#myModal<?php $y = $y + 1;echo $y; ?>"
+                                          data-id="informacion<?=$y?>" class="masInformacion">
+                                        Mas informaci&oacute;n</a>
                                     <?}?>
                                     </div>
                                 </div>
@@ -391,59 +381,84 @@ border-bottom-left-radius: 5px;">
                                 else { ?>
 
                               <!-- Modal -->
-                                <div class="modal fade" id="myModal<?php echo $y; ?>" tabindex="-1" role="dialog"
-                                     aria-labelledby="myModalLabel" aria-hidden="true" >
-                                    <div class="modal-dialog col-lg-10">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                        aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title">MAS INFORMACI&Oacute;N</h4>
-                                            </div>
-                                            <div class="modal-body">
-			<span style="display:inline-block;">
-			  Compa&ntilde;&iacute;a de Seguros:<br><?php echo($logo_compania_seguros); ?><br><br><br>
-			  Formas de pago: Voluntario, ACH o Tarjeta de cr&eacute;dito<br>
-			  Frecuencia de pago: Anual.<br>
-                          <br><br><br><br><br>
-			</span>
-			<span class="well col-lg-5" style="float:right; display:inline-block; font-size:11px;">
-			<b>Cobertura Principal:</b><br>
-    			<i class="glyphicon glyphicon-ok">Muerte por cualquier causa</i><br>
-			<b>Coberturas Adicionales:</b><br>
-			<i class="glyphicon glyphicon-ok">No aplica.</i><br>
-			</span>
-                                            </div>
+                                <div class="col-xs-12"  id="informacion<?php echo $y; ?>" style="display:none;" >
+                                    <div class="col-xs-12">
+                                        <div >
+                                            <span style="display:inline-block;color: #000;">
+                                                <label class="letras_resultado_informacion " >Compa&ntilde;&iacute;a de Seguros:</label>
+                                                <?php echo($logo_compania_seguros); ?><br><br>
+                                                <label class="letras_resultado_informacion ">Formas de pago:</label>
+                                                 Voluntario, ACH o Tarjeta de cr&eacute;dito<br>
+                                                 <label class="letras_resultado_informacion ">Frecuencia de pago:</label>
+                                                 Anual.<br>
+                                                
+                                            </span>
+                                            <span class="well col-xs-12" style="float:right; display:inline-block; font-size:11px;color: #000;">
+                                                <b>Cobertura Principal:</b><br>
+                                                <i class="glyphicon glyphicon-ok">Muerte por cualquier causa</i><br>
+                                                <b >Coberturas Adicionales:</b><br>
+                                                <i class="glyphicon glyphicon-ok">No aplica.</i><br>
+                                            </span>
+                                        </div>
+                                        <div class="col-xs-12" align="center"><? $basico="basico"; $premium="premium"; $ejecutivo="ejecutivo";?>
+                                            <button type="button" data-id="informacion<?=$y?>"  class="btn btn-tema regresar" >Regresar</button>
                                         </div>
                                         <!-- /.modal-content -->
                                     </div>
                                     <!-- /.modal-dialog -->
                                 </div>
+                              
                                 <!-- /.modal --><?php } ?>
 
 
 
 
-            <?php
+            <?
 
         }
             ?>
-                <div style="margin: 0 auto 0 auto; ">
-                    <div class="row" >
-                        <div class="row" >
-                            <div class="col-lg-2">
-
-                            </div>
-                            <div class="col-lg-8" align="center">
+                <div class="col-xs-12">
+                    <div class="row ocultar" >
+                        <div  >
+                            <div class="col-xs-12" align="justify">
                                 Las primas que se presentan en esta p&aacute;gina est&aacute;n basadas en personas con buena salud.
                                 Dependiendo de la edad, g&eacute;nero y suma asegurada solicitada, el Asegurado tendr&aacute;, en algunos casos, que hacerse ex&aacute;menes m&eacute;dicos que ser&aacute;n pagados por la compa&ntilde;&iacute;a de seguros.
-                            </div>
-                            <div class="col-lg-2">
-
                             </div>
                         </div>
                     </div>
                 </div>
+            <footer>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="widget">
+                                    <h5 class="widgetheading">Comuniquese con Nosotros</h5>
+                                    <address>
+                                        <strong> PARA MAYOR INFORMACIÓN CONTACTENOS</strong><br>
+                                    </address>
+                                    <p>
+                                        <i class="icon-phone"></i>AL 227 7777 O ESCRIBANOS <br>
+                                        <i class="icon-envelope-alt"></i> A INFO@SEGUROTECONVIENE.COM
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="widget">
+                                    <h5 class="widgetheading"></h5>
+                                    <ul class="link-list">
+                                        <li><a href="#">EL USO DE ESTE SITIO CONSTITUYE UN ACUERDO A TODOS LOS TÉRMINOS Y CONDICIONES
+                                                DEL MISMO, LE RECOMENDAMOS LEERLO ANTES DE UTILIZARLO.
+                                                SEGUROTECONVIENE.COM ES UNA MARCA REGISTRADA EN LA REPÚBLICA DE PANAMA Y FORMA PARTE DE
+                                                LA EMPRESA DE CORRETAJE JIMFOR, S.A.
+                                            </a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </footer>
               <?}
 }else{?>
 

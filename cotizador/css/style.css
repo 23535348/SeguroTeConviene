@@ -271,3 +271,7 @@ body {
             transform: translateY(-700px) rotate(600deg);
   }
 }
+
+.label-titulo{
+    color: #000;
+}
