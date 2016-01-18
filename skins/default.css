@@ -266,6 +266,11 @@ footer{
 	text-align: center;
 	width: 100%;
 }
+.letras_resultado_informacion {
+
+	color: rgb(0, 0, 0);
+
+}
 
 
 /* Por debajo de 700px */

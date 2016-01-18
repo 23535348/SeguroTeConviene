@@ -145,6 +145,8 @@
         return true;
     }
     function ActivarTerminos(){
+        document.getElementById('row_img_num').style.display = 'none';
+        document.getElementById('row_letas').style.display = 'none';
         document.getElementById('personal').style.display = 'none';
         document.getElementById('vehiculo').style.display = 'none';
         document.getElementById('TerminosCondiciones').style.display = 'block';
@@ -153,6 +155,8 @@
     }
 
     function DesactivarTerminos(){
+        document.getElementById('row_img_num').style.display = 'block';
+        document.getElementById('row_letas').style.display = 'block';
         document.getElementById('personal').style.display = 'none';
         document.getElementById('vehiculo').style.display = 'block';
         document.getElementById('TerminosCondiciones').style.display = 'none';
@@ -160,6 +164,8 @@
         return true;
     }
     function DesactivarTerminos2(){
+        document.getElementById('row_img_num').style.display = 'block';
+        document.getElementById('row_letas').style.display = 'block';
         document.getElementById('personal').style.display = 'block';
         document.getElementById('vehiculo').style.display = 'none';
         document.getElementById('TerminosCondiciones').style.display = 'none';
@@ -169,7 +175,8 @@
 
 
     function ActivarInformacion(plan,id){
-
+        document.getElementById('row_img_num').style.display = 'none';
+        document.getElementById('row_letas').style.display = 'none';
         document.getElementById('resultados').style.display = 'none';
         document.getElementById('resultados1').style.display = 'none';
         document.getElementById('resultados2').style.display = 'none';
@@ -178,7 +185,8 @@
         return true;
     }
     function OcultarDiv(plan,id){
-
+        document.getElementById('row_img_num').style.display = 'block';
+        document.getElementById('row_letas').style.display = 'block';
         document.getElementById('resultados').style.display = 'block';
         document.getElementById('resultados1').style.display = 'block';
         document.getElementById('resultados2').style.display = 'block';

@@ -16,7 +16,7 @@
     </script>
 <?php $url=base_url();?>
 
-            <div class="row">
+            <div id="row_letas" class="row">
                 <div class="col-xs-12">
                     <div class="gris_letras">
                         Cotización de Seguro para Auto de Uso Particular
@@ -59,7 +59,7 @@
 <? if(isset($_POST['sesion_cotizacion'])){
     if($_POST['sesion_cotizacion']==1){ $variableStyle="";?>
 
-    <div class="row" align="center">
+    <div id="row_img_num" class="row" align="center">
         <div class="col-xs-12">
             <div id=1 class="col-xs-4">
             <div style="">
@@ -121,7 +121,7 @@
 <? if(isset($brandon)){
     if($brandon==1){?>
 
-        <div class="row" id="resultados">
+        <div class="row hidden-xs" id="resultados">
              <div class="col-xs-12">
             <div class="indicadores col-xs-3 col-offset-3">
                 <br>
@@ -282,7 +282,7 @@
             $consulta_coberturas_especiales=$r17[$iteracion];
             $consulta_coberturas_especiales_b=$r18[$iteracion];
             $consulta_coberturas_especiales_c=$r19[$iteracion];
-       //    $prima_basico_total=12345;
+           $prima_basico_total=12345;
 
             switch ($nombre_aseguradora){
                 case "Internacional de Seguros":?>
@@ -320,9 +320,9 @@
                     <p>
                         <? if($prima_basico_total<1){}else{ $basico="basico"; $premium="premium"; $ejecutivo="ejecutivo"; ?>
                         <a  class="letras-resultado-plan" onclick="ActivarInformacion('<?=$basico?>','<?=$iteracion?>');"><?}?>
-                        <span class="glyphicon glyphicon-info-sign"> </span>
+                        <span class="glyphicon glyphicon-info-sign">Básico </span>
                             <? if($prima_basico_total<1){}else{?></a><?}?>
-                   Básico</p>
+                   </p>
 
                 </div>
                 <div class="col-xs-6 letras-resultado-prima" align="center" >B/.
@@ -463,9 +463,9 @@
                         <? if($prima_ejecutivo_total<1){}else{
                         $basico="basico"; $premium="premium"; $ejecutivo="ejecutivo"; ?>
                         <a  class="letras-resultado-plan" onclick="ActivarInformacion('<?=$ejecutivo?>','<?=$iteracion?>');"><?}?>
-                        <span class="glyphicon glyphicon-info-sign"></span>
+                        <span class="glyphicon glyphicon-info-sign"></span>Ejecutivo
                             <? if($prima_ejecutivo_total<1){}else{?></a><?}?>
-                        Ejecutivo</p></div>
+                        </p></div>
                 <div class="col-xs-6 letras-resultado-prima" align="center">B/.
                 <?php if($prima_ejecutivo_total<1){?>
                     <?php echo number_format($prima_ejecutivo_total, "2", ".", ","); ?>
@@ -610,9 +610,9 @@
                 <div class=" col-xs-6 letras-resultado-plan"><p>
                         <? if($prima_premium_total<1){}else{$basico="basico"; $premium="premium"; $ejecutivo="ejecutivo"; ?>
                         <a  class="letras-resultado-plan" onclick="ActivarInformacion('<?=$premium?>','<?=$iteracion?>');"><?}?>
-                            <span class="glyphicon glyphicon-info-sign"></span>
+                            <span class="glyphicon glyphicon-info-sign"></span>Premium
                             <? if($prima_premium_total<1){}else{?></a><?}?>
-                        Premium</p></div>
+                        </p></div>
                 <div class="col-xs-6 letras-resultado-prima" align="center">B/.
 
                     <?php if($prima_premium_total<1){?>
@@ -874,14 +874,14 @@ Div de cierre del tabs
         $consulta_coberturas_especiales=$r17[$iteracion];
         $consulta_coberturas_especiales_b=$r18[$iteracion];
         $consulta_coberturas_especiales_c=$r19[$iteracion];
-       //$prima_basico_total=12345;
+      $prima_basico_total=12345;
         ?>
 
 
 
 
-    <?if($prima_basico_total<1){}else{?><div style="display:none" id="aseguradora_plan_basico<?=$iteracion?>">
-    <span class="col-xs-12" style="display:inline-block;">
+    <?if($prima_basico_total<1){}else{?><div class="letras_resultado_informacion" style="display:none" id="aseguradora_plan_basico<?=$iteracion?>">
+    <span class="col-xs-12 " style="display:inline-block;">
 			  <b>Compañia de Seguros:</b> <?php if($nombre_aseguradora=="Internacional de Seguros") {?>
             <img src="<?= $url ?>img/logos/iseguros133.png"><br><?php }?>
         <?php if($nombre_aseguradora=="Generali") {?><img src="<?= $url ?>img/logos/generali.png"><br><?php }?>
@@ -946,7 +946,7 @@ Div de cierre del tabs
 </div>
 
 <?}?>
-    <?if($prima_ejecutivo_total<1){}else{?> <div style="display:none"id="aseguradora_plan_ejecutivo<?=$iteracion?>">
+    <?if($prima_ejecutivo_total<1){}else{?> <div  class="letras_resultado_informacion" style="display:none"id="aseguradora_plan_ejecutivo<?=$iteracion?>">
     <span class="col-xs-12" style="display:inline-block;">
 			  <b>Compañia de Seguros:</b> <?php if($nombre_aseguradora=="Internacional de Seguros") {?><img src="<?= $url ?>img/logos/iseguros.png"><br><?php }?>
         <?php if($nombre_aseguradora=="Generali") {?><img src="<?= $url ?>img/logos/generali.png"><br><?php }?>
@@ -1010,7 +1010,7 @@ Div de cierre del tabs
 </div><?}?>
     <? if($prima_premium_total<1){ }else{
     ?>
-    <div style="display:none" id="aseguradora_plan_premiun<?=$iteracion?>">
+    <div  class="letras_resultado_informacion" style="display:none" id="aseguradora_plan_premiun<?=$iteracion?>">
                     	<span class="col-xs-12" style="display:inline-block;">
 			                <b>Compañia de Seguros:</b> <?php if($nombre_aseguradora=="Internacional de Seguros") {?><img src="<?= $url ?>img/logos/iseguros.png"><br><?php }?>
                             <?php if($nombre_aseguradora=="Generali") {?><img src="<?= $url ?>img/logos/generali.png"><br><?php }?>
