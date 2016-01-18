@@ -251,15 +251,19 @@
             <div class="tab-content" id="resultados1">-->
 
 <?
-
+            $con=0;
         while ($iteracion < 5) {
+
+
 
         ?>
 
 
-        <div id="tab_<?=$iteracion?>"  class="row tab-pane <? if($iteracion==1) {
+        <div id="tab_<?=$iteracion?>"  class="col-xs-12 well tab-pane   <? if($iteracion==1) {
             $clase="active";
         }else{$clase="";} echo "$clase";?>">
+
+
 
             <?php
             $idaseguradora = $r0[$iteracion];
@@ -315,6 +319,7 @@
                     <?php break;
             } ?>
             <div class="col-xs-12">
+                <div class="row">
             <div class="col-xs-12 aseguradoras " >
                 <div class="col-xs-6 letras-resultado-plan">
                     <p>
@@ -325,14 +330,14 @@
                    </p>
 
                 </div>
-                <div class="col-xs-6 letras-resultado-prima" align="center" >B/.
+                <div class="col-xs-6 letras-resultado-prima" align="center" ><u>B/.
                      <?php if($prima_basico_total<1){?>
                          <?php echo number_format($prima_basico_total, "2", ".", ","); ?>
                      <?}else{?>
                     <a href="validator/?nombre=<?=$nombre?>&apellido=<?=$apellido?>&cedula=<?=$cedula?>&colision=<?=$calculo_colision_premium?>&dcolision=<?=$calculo_deducible_colision_premium?>&comprensivo=<?=$calculo_comprensivo_premium?>&dcomprensivo=<?=$calculo_deducible_comprensivo_premium?>&company=<?=$nombre_aseguradora?>&historial=<?=$historial_manejo?>&plan=Basico&poliza=<?=$prima_premium_total?>&marca=<?=$marca?>&modelo=<?=$modelo?>&idaseguradora=<?=$idaseguradora?>&anio_auto=<?=$anio_auto?>&sexo=<?=$sexo?>&tipo_auto=<?=$tipo_auto?>&estado_civil=<?=$estado_civil?>&fecha_nac=<?=$fecha_nac?>&precio_venta=<?=$precio_venta?>&email=<?=$email?>&estado_auto=<?=$estado_auto?>&telefono=<?=$telefono?>&celular=<?=$celular?>">
                      <?php echo number_format($prima_basico_total, "2", ".", ","); ?></a>
                      <?}?>
-
+                    </u>
 
                 <?php if($prima_basico_total<1){?>
                  <a href="#?<?php $empresa=$empresa+1;?>">
@@ -466,14 +471,14 @@
                         <span class="glyphicon glyphicon-info-sign"></span>Ejecutivo
                             <? if($prima_ejecutivo_total<1){}else{?></a><?}?>
                         </p></div>
-                <div class="col-xs-6 letras-resultado-prima" align="center">B/.
+                <div class="col-xs-6 letras-resultado-prima" align="center"><u>B/.
                 <?php if($prima_ejecutivo_total<1){?>
                     <?php echo number_format($prima_ejecutivo_total, "2", ".", ","); ?>
                 <?}else{?>
                     <a href="validator/?nombre=<?=$nombre?>&apellido=<?=$apellido?>&cedula=<?=$cedula?>&colision=<?=$calculo_colision_premium?>&dcolision=<?=$calculo_deducible_colision_premium?>&comprensivo=<?=$calculo_comprensivo_premium?>&dcomprensivo=<?=$calculo_deducible_comprensivo_premium?>&company=<?=$nombre_aseguradora?>&historial=<?=$historial_manejo?>&plan=Ejecutivo&poliza=<?=$prima_premium_total?>&marca=<?=$marca?>&modelo=<?=$modelo?>&idaseguradora=<?=$idaseguradora?>&anio_auto=<?=$anio_auto?>&sexo=<?=$sexo?>&tipo_auto=<?=$tipo_auto?>&estado_civil=<?=$estado_civil?>&fecha_nac=<?=$fecha_nac?>&precio_venta=<?=$precio_venta?>&email=<?=$email?>&estado_auto=<?=$estado_auto?>&telefono=<?=$telefono?>&celular=<?=$celular?>">
                         <?php echo number_format($prima_basico_total, "2", ".", ","); ?></a>
                 <?}?>
-
+                    </u>
                 </div>
 
 
@@ -613,7 +618,7 @@
                             <span class="glyphicon glyphicon-info-sign"></span>Premium
                             <? if($prima_premium_total<1){}else{?></a><?}?>
                         </p></div>
-                <div class="col-xs-6 letras-resultado-prima" align="center">B/.
+                <div class="col-xs-6 letras-resultado-prima" align="center"><u>B/.
 
                     <?php if($prima_premium_total<1){?>
                         <?php echo number_format($prima_premium_total, "2", ".", ","); ?>
@@ -622,7 +627,7 @@
                             <?php echo number_format($prima_basico_total, "2", ".", ","); ?></a>
                     <?}?>
 
-
+                    </u>
                 </div>
                 <?php if($prima_premium_total<1){?>
                 <!--
@@ -748,11 +753,63 @@
   </div><!-- /.modal --><?php } ?>
           </div>
             </div>
+            </div>
         </div>
 
 
         <?php
 
+
+            if($iteracion==4){?>
+
+                <div class="col-xs-12">
+                    <p align="justify">
+                        Mensaje importante: Las primas que presentamos en esta página
+                        están sujetas a la verificación de su historial de tránsito.
+                        Los deducibles de algunas compañías de seguros tendrán recargo
+                        si la persona es menor de 25 años de edad. Habrá vehículos que
+                        no son asegurables según compañía de seguros. Las primas antes
+                        detalladas solo aplican para coberturas en autos de uso particular,
+                        en caso de requerir cotización para autos de uso comercial favor
+                        llamar a nuestras oficinas.
+
+                    </p>
+                    </div>
+    <div class="col-xs-12">
+                <footer>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="widget">
+                                    <h5 class="widgetheading">Comuniquese con Nosotros</h5>
+                                    <address>
+                                        <strong> PARA MAYOR INFORMACIÓN CONTACTENOS</strong><br>
+                                    </address>
+                                    <p>
+                                        <i class="icon-phone"></i>AL 227 7777 O ESCRIBANOS <br>
+                                        <i class="icon-envelope-alt"></i> A INFO@SEGUROTECONVIENE.COM
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="widget">
+                                    <h5 class="widgetheading"></h5>
+                                    <ul class="link-list">
+                                        <li><a href="#">EL USO DE ESTE SITIO CONSTITUYE UN ACUERDO A TODOS LOS TÉRMINOS Y CONDICIONES
+                                                DEL MISMO, LE RECOMENDAMOS LEERLO ANTES DE UTILIZARLO.
+                                                SEGUROTECONVIENE.COM ES UNA MARCA REGISTRADA EN LA REPÚBLICA DE PANAMA Y FORMA PARTE DE
+                                                LA EMPRESA DE CORRETAJE JIMFOR, S.A.
+                                            </a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </footer>
+</div>
+            <?}
 
 
 

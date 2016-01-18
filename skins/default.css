@@ -271,6 +271,16 @@ footer{
 	color: rgb(0, 0, 0);
 
 }
+.resultado_fondo {
+
+	background-color: #a8a8a8;
+
+}
+.resultado_fondo2 {
+
+	background-color: #d7d7d7;
+
+}
 
 
 /* Por debajo de 700px */
