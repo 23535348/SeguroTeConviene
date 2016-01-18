@@ -139,13 +139,9 @@
 </script>
 <script>
 
-        
-        //$('#datepicker').datetimepicker();
-        $('#datepicker').datetimepicker({
-            format:'DD/MM/YYYY',
-            locale:'es',
-            maxDate: moment()
-        });
+        $("#datepicker" ).datepicker(  );
+
+
 
 </script>
 <script type="text/javascript">
