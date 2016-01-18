@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <?php $url=base_url();?>
     <meta charset="utf-8">
     <title>Seguro te Conviene </title>
