@@ -37,14 +37,14 @@ header .nav li.active ul.dropdown-menu li.active a{
 	color:#e87b00; /*#68A4C4;*/
 }
 /* === background color === */
-
-.custom-carousel-nav.right:hover, .custom-carousel-nav.left:hover, 
-.dropdown-menu li:hover,
+/*.dropdown-menu li:hover,
 .dropdown-menu li a:hover,
 .dropdown-menu li > a:focus,
 .dropdown-submenu:hover > a, 
 .dropdown-menu .active > a,
-.dropdown-menu .active > a:hover,
+.dropdown-menu .active > a:hover,*/
+.custom-carousel-nav.right:hover, .custom-carousel-nav.left:hover, 
+
 .pagination ul > .active > a:hover,
 .pagination ul > .active > a,
 .pagination ul > .active > span,

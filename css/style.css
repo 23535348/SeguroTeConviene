@@ -8,7 +8,7 @@
 /* === custom icon === */
 @import url('custom-fonts.css');
 /* ==== overwrite bootstrap standard ==== */
-@import url('overwrite.css');
+
 @import url('animate.css');
 
 /* ===================================
@@ -2252,12 +2252,13 @@ visibility: visible;*/
 	width: 100%;
 }
 .precio {
-	background-color: #c3e2fc;
+	//background-color: #c3e2fc;
 	border-radius: 1px;
 	font-weight: bold;
-	margin: 0 5px 0 auto;
+	//margin: 0 5px 0 auto;
 	padding: 5px;
 	text-align: center;
+        color: #E87B00;
 }
 
 @media screen and (max-width: 400px){

@@ -193,7 +193,7 @@ border-bottom-left-radius: 5px;">
         </div>
 
 
-        <tr>
+    <div id="aseguradorasn">
 
             <?php
 
@@ -202,116 +202,112 @@ border-bottom-left-radius: 5px;">
             $idaseguradora = $tabla_resultados_aseguradora[$iteracion];
             $nombre_aseguradora = $tabla_resultados1[$iteracion];
             $prima_planeada = $tabla_resultados2[$iteracion];
-
+            $prima_planeada=1;
 
             ?>
 
-            <td width="50%">
+            
 
 
 
-                <div style="margin: 0 auto 0 auto; ">
+                <div style="margin: 0 auto 0 auto; " >
                     <div class="row" >
-                        <div class="col-lg-2">
-                            <?
+                        <div class="col-xs-12">
+                            <?php
                             switch ($nombre_aseguradora) {
                                 case "Internacional de Seguros":
                                     ?>
-                                    <td align="Center" width="25%">
-                                        <div style="text-align:Center;"><img src="<?=$url?>img/logos/iseguros133.png"></div>
-                                    </td>
+                                    
+                                        <div class="col-xs-12" style="text-align:Center;"><img src="<?=$url?>img/logos/iseguros133.png"></div>
+                                    
                                     <?php
                                     $logo_compania_seguros = "<img src='".$url."img/logos/iseguros133.png'>";
                                     break;
-                                case "Generali":
+                                case "Generali" :
                                     ?>
-                                    <td align="Center" width="25%">
+                                    
                                         <div style="text-align:Center;"><img src="<?=$url?>img/logos/generali.png"></div>
-                                    </td>
+                                    
                                     <?php
                                     $logo_compania_seguros = "<img src='".$url."img/logos/generali.png'>";
                                     break;
                                 case "ASSA":
                                     ?>
-                                    <td align="Center" width="25%">
+                                  
                                         <div style="text-align:Center;"><img src="<?=$url?>img/logos/assa.png"></div>
-                                    </td>
+                                   
                                     <?php
                                     $logo_compania_seguros = "<img src='".$url."img/logos/assa.png'>";
                                     break;
                                 case "Banesco":
                                     ?>
-                                    <td align="Center" width="25%">
+                                    
                                         <div style="text-align:Center;"><img src="<?=$url?>img/logos/banesco.png"></div>
-                                    </td>
+                                    
                                     <?php
                                     $logo_compania_seguros = "<img src='".$url."img/logos/banesco.png'>";
                                     break;
                                 case "Acerta":
                                     ?>
-                                    <td align="Center" width="25%">
+                                    
                                         <div style="text-align:Center;"><img src="<?=$url?>img/logos/acerta.png"></div>
-                                    </td>
+                                    
                                     <?php
                                     $logo_compania_seguros = "<img src='".$url."img/logos/acerta.png'>";
                                     break;
                                 case "Banistmo":
                                     ?>
-                                    <td align="Center" width="25%">
+                                    
                                         <div style="text-align:Center;"><img src="<?=$url?>img/logos/HSBC_Seguros.png"></div>
-                                    </td>
+                                    
                                     <?php
                                     $logo_compania_seguros = "<img src='".$url."img/logos/HSBC_Seguros.png'>";
                                     break;
                                 case "SURA":
                                     ?>
-                                    <td align="Center" width="25%">
+                                    
                                         <div style="text-align:Center;"><img src="<?=$url?>img/logos/sura.png"></div>
-                                    </td>
+                                    
                                     <?php
                                     $logo_compania_seguros = "<img src='".$url."img/logos/sura.png'>";
                                     break;
                             }
                             ?>
                         </div>
-                        <div class="col-lg-8">
-                            <div class="row" style=" background-color:#ececec;" >
+                        
+                        
+                        
+                        
+                        <div class="col-xs-12">
+                            <div class="row"  >
 
-                                <div class="col-lg-12" >
-                                    <div class="col-lg-4" >
-                                    <div class="row">
-                                        <div class="col-lg-12 basico">
-
-                                            <p>Prima</p>
-
-
-                                            </div>
-
-                                    </div>
-                                        <div class="row">
+                                <div class="col-xs-12" >
+                                    <div class="col-xs-12" >
+                                       
+                                        <div class="row" style="margin-bottom: 0px;">
 
                                         <div class="col-lg-12 ">
-                                            <div class="row">
-                                            <div class="col-lg-6 ">
-<div class="precio">
+                                            <div class="row" style="margin-bottom: 0px;">
+                                                <div class="col-xs-12 " style="text-align: center;">
+                                                <div class="precio" >
 
                                                 B/.<?php echo number_format($prima_planeada * 1.05, "2", ".", ","); ?>
                                             </div>
                                             </div>
-                                            <div class="col-lg-6">
+                                                <div class="col-xs-12" style="text-align: center;">
 
                                             <?php if ($prima_planeada < 1){ ?>
-                <a href="#">
-                    <button class="btn btn-warning btn-small" style="margin-top:0;" type="button"
-                            disabled>
-                        Solicitar
-                        <i class="glyphicon glyphicon-circle-arrow-right"></i>
-                    </button>
-                </a>
-                <br>
-                <div class="msj">No Cotizable.
+                                        <a href="#">
+                                            <button class="btn btn-warning btn-small" style="margin-top:0;" type="button"
+                                                    disabled>
+                                                Solicitar
+                                                <i class="glyphicon glyphicon-circle-arrow-right"></i>
+                                            </button>
+                                        </a>
+                                        <br>
+                                        <div class="msj">No Cotizable.
 
-                </div>
+                                        </div>
             <?php }
             else {
                 $poliza=($prima_planeada*1.05);
@@ -355,8 +351,8 @@ border-bottom-left-radius: 5px;">
                                         </div>
 
                                     </div>
-                                    <div class="col-lg-8">
-                                        <b>Cobertura Principal:</b>
+                                    <div class="col-xs-12" style="text-align: center;">
+                                       <!-- <b>Cobertura Principal:</b>
                                         <br>
                                         <i class="glyphicon glyphicon-ok" style="color:#FFA500;"></i>
                                         Muerte por cualquier causa.
@@ -364,17 +360,17 @@ border-bottom-left-radius: 5px;">
                                         <b>Coberturas Adicionales:</b>
                                         <br>
                                         <i class="glyphicon glyphicon-ok" style="color:#FFA500;"></i>
-                                        No aplica.
+                                        No aplica. -->
 
-        <?php if ($prima_planeada < 1){ ?>
+                                    <?php if ($prima_planeada < 1){ ?>
 
-    <?php }
-    else { ?>
+                                <?php }
+                                else { ?>
 
-        <a style="color:#1E90FF; text-decoration:none;" data-toggle="modal"
-           href="#myModal<?php $y = $y + 1;
-           echo $y; ?>">Mas informaci&oacute;n</a>
-        <?}?>
+                                    <a style="color:#1E90FF; text-decoration:none;" data-toggle="modal"
+                                       href="#myModal<?php $y = $y + 1;
+                                       echo $y; ?>">Mas informaci&oacute;n</a>
+                                    <?}?>
                                     </div>
                                 </div>
                             </div>
@@ -428,7 +424,7 @@ border-bottom-left-radius: 5px;">
 
 
 
-            <?
+            <?php
 
         }
             ?>
