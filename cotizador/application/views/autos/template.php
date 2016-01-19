@@ -286,7 +286,7 @@
             $consulta_coberturas_especiales=$r17[$iteracion];
             $consulta_coberturas_especiales_b=$r18[$iteracion];
             $consulta_coberturas_especiales_c=$r19[$iteracion];
-           $prima_basico_total=12345;
+           //$prima_basico_total=12345;
 
             switch ($nombre_aseguradora){
                 case "Internacional de Seguros":?>
@@ -931,7 +931,7 @@ Div de cierre del tabs
         $consulta_coberturas_especiales=$r17[$iteracion];
         $consulta_coberturas_especiales_b=$r18[$iteracion];
         $consulta_coberturas_especiales_c=$r19[$iteracion];
-      $prima_basico_total=12345;
+     // $prima_basico_total=12345;
         ?>
 
 
@@ -1180,7 +1180,7 @@ $iteracion++;
                         </div>
                             <div class="col-xs-12" style="margin-bottom:16px;">
                                 <div class="">
-                                    <input  id="datepicker" class="form-control" type="text" placeholder="Fec.Nac: dd/mm/aaaa "  data-date-format="dd/mm/yyyy" name="fecha_nac" tabindex="5" required="">
+                                    <input  id="datepicker" class="form-control" type="text" placeholder="Fec.Nac: dd/mm/aaaa "  name="fecha_nac" tabindex="5" required="">
 
 
                                     <!--  <div id="dateP" class="picker" style="display: none"></div><input name="form[formula][GBDAT]" class="picker" id="Nacimiento" required type="text"

@@ -181,6 +181,9 @@
         document.getElementById('resultados1').style.display = 'none';
         document.getElementById('resultados2').style.display = 'none';
         document.getElementById('aseguradora_plan_' + plan + id).style.display = 'block';
+        document.getElementById('aseguradora_plan_' + plan + id).scrollIntoView();
+
+
        // document.getElementById('TerminosCondiciones').style.display = 'block';
         return true;
     }
@@ -191,7 +194,8 @@
         document.getElementById('resultados1').style.display = 'block';
         document.getElementById('resultados2').style.display = 'block';
         document.getElementById('aseguradora_plan_' + plan + id).style.display = 'none';
-        // document.getElementById('TerminosCondiciones').style.display = 'block';
+        document.getElementById('tab_' + id).scrollIntoView();
+               // document.getElementById('TerminosCondiciones').style.display = 'block';
         return true;
     }
     function formvalidation() {

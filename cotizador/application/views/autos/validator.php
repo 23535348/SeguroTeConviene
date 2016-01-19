@@ -278,7 +278,7 @@
 
 
 
-                    <div class="col-lg-6">
+                    <div class="col-xs-6">
                         <form name="Aseguradora<?=$plan?>" id="Aseguradora" action="<?=$url?>cotizador/index.php/Autos/autos_complete" method="POST">
                             <input type="hidden" name="nombre" value="<?=$nombre?>">
                             <input type="hidden" name="apellido" value="<?=$apellido?>">
