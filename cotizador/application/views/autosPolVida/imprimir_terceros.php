@@ -75,31 +75,6 @@ $pdf->Cell(189,8,utf8_decode('Escríbanos a: info@seguroteconviene.com'),0,1,'L'
 $pdf->Output('solicitudes/'.$_GET["id"].'.pdf', 'D');
 $doc = $pdf->Output('solicitudes/'.$_GET["id"].'.pdf', 'S');
 
-readfile('solicitudes/'.$_GET["id"].'.pdf');
-
-$mail= new Mailer(); // defaults to using php "mail()"
-$mail->IsSendmail(); // telling the class to use SendMail transport
-$body = "<table><tr><td width='20%' align='left'><img src='http://166.78.253.30/jimforstc/img/logo.png' alt='Seguro te conviene'></td><td width='80%' align='center'><font size='6'>Felicidades!!</font></td></tr></table><br>
-Has tomado la decisi&oacute;n correcta, ahora eres parte de las miles de personas que han utilizado www.seguroteconviene.com como su proveedor de seguros.<br><br>
-En las pr&oacute;ximas 24 horas laborables uno de nuestros ejecutivos te estar&aacute; llamando al tel&eacute;fono que nos proporcionaste para poder terminar el proceso <br>y entregarte la p&oacute;liza que nos has solicitado.<br><br>
-Te estamos muy agradecidos por la oportunidad que nos brindas de servirte, y te damos la m&aacute;s cordial bienvenida a nuestro grupo exclusivo de clientes.<br><br>
-De tener alguna pregunta o consulta sobre el servicio que te prestamos no dudes en llamarnos o escribirnos y con gusto te ayudaremos.<br><br><img src='http://166.78.253.30/jimforstc/img/footeremail.jpg' alt='Seguro te conviene Footer'>";
-
-
-$body = eregi_replace("[\]",'',$body);
-//$mail->AddReplyTo("info@stc.com","Seguro Te Conviene");
-//$mail->SetFrom("info@stc.com","Seguro Te Conviene");
-$mail->AddReplyTo($AddReplyTo,"Seguro Te Conviene");
-$mail->SetFrom($SetFrom,"Seguro Te Conviene");
-$address = $_GET['email'];
-$mail->AddAddress($address);
-$mail->SMTPDebug = true;
-$mail->Subject    = "Solicitud creada";
-$mail->MsgHTML($body);
-$mail->AddStringAttachment($doc, 'solicitudes/'.$_GET["id"].'.pdf', 'base64', 'application/pdf');
-//$mail->AddAttachment("$doc");
-//$mail->AddAttachment("solicitudes/".$_GET["id"]."","solicitudes/".$_GET["id"].".pdf"); // attachment
-$mail->Send();
 
 
 ?>

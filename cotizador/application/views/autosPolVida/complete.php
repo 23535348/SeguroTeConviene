@@ -61,7 +61,7 @@
 
 
 
-
+<?php $this->load->view('autosPolVida/imprimir_terceros_correo.php'); ?>
 
 <?
 $this->load->view('tema/footer.php');

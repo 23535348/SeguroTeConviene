@@ -604,7 +604,7 @@ class AutosPolVida extends CI_Controller
     public function seguro_complete()
     {
         $this->load->library('FPDF');
-
+        $this->load->library('Mailer');
 
         $apellido =$this->input->post('apellido');
         $nombre =$this->input->post('nombre');
@@ -624,7 +624,12 @@ class AutosPolVida extends CI_Controller
         $poliza = $this->input->post('poliza');
         $company = $this->input->post('company');
         $idaseguradora =$this->input->post('idaseguradora');
-
+        if($this->input->post('fumador')=="0"){ $datos['mensaje_fumador'] = "No";} else { $datos['mensaje_fumador'] = "Si";}
+        if($this->input->post('sexo')=="M"){ $datos['sexo1'] = "Masculino";} else { $datos['sexo1'] = "Femenino";}
+        if($this->input->post('periodo_pago')==1){$datos['mensaje_frecuencia_pago'] = "Anual";}
+        if($this->input->post('periodo_pago')==2){ $datos['mensaje_frecuencia_pago'] = "Semestral";}
+        if($this->input->post('periodo_pago')==3){ $datos['mensaje_frecuencia_pago'] = "Trimestral";}
+        if($this->input->post('periodo_pago')==4){ $datos['mensaje_frecuencia_pago'] = "Mensual";}
         $uso_auto = "OFICINA";
 
         $datos['edad']=$edad;
@@ -723,7 +728,8 @@ class AutosPolVida extends CI_Controller
         $datos['pago_voluntario']=$pago_voluntario;
         $datos['pago_UNPAGO']=$pago_UNPAGO;
         $datos['pago_ACH']=$pago_ACH;
-
+        $datos['AddReplyTo']="deivisjose.d@gmail.com";
+        $datos['SetFrom']="deivisjose.d@gmail.com";
 
 
         $counter_coberturas = 0;
