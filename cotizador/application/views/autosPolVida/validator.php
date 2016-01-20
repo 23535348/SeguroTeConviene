@@ -125,13 +125,14 @@
     <div class="col-lg-8 ">
     <div class="col-lg-4" align="center">
     <a href="javascript:history.back(-1);">
-<button class="btn" style="background-color:#428bca;border-color: #428bca; color: #fff;margin-top:10px; color: #fff;">Regresar</button></a>
+    <button class="btn" style="background-color:#428bca;border-color: #428bca; color: #fff;margin-top:10px; color: #fff;width: 130px;">Regresar</button></a>
     </div>
-    <div class="col-lg-4" align="center">
+        
+    <!--<div class="col-lg-4" align="center">
     <a href="javascript:window.history.go(-2);">
  <button class="btn" style="background-color:#428bca;border-color: #428bca; color: #fff;margin-top:10px; color: #fff;">Actualizar Datos</button></a>
 
-    </div>
+    </div>-->
     <div class="col-lg-4" align="center">
                                                  <form name="form" id="form" action="seguro_complete" method="POST">
                                                     <input type="hidden" name="nombre" value="<?=$nombre?>">

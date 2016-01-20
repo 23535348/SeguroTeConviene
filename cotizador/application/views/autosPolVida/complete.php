@@ -38,10 +38,10 @@
 
                 <div class="col-lg-12" >
                     <div class="col-lg-6" style=" margin: 0 auto 0 auto; text-align:center;">
-                        <a href="javascript:window.history.go(-1);">
+                        <a href="<?=base_url()?>index.php">
                             <button class="btn" style="background-color:#428bca;border-color: #428bca; color: #fff;margin-top:10px; color: #fff;">Página de inicio</button></a>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" style=" margin: 0 auto 0 auto; text-align:center;">
                         <a href="imprimir_terceros/?<?php echo str_replace('+', '%20', http_build_query($_POST)); ?>&id=<?php echo $id_registro; ?>&fecha_solicitud=<?php echo $fecha_solicitud; ?>&termino=<?php echo $termino; ?>">
 
                             <button class="btn btn-warning" style="margin-top:10px;">Imprimir orden</button></a>

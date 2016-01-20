@@ -417,7 +417,7 @@ border-bottom-left-radius: 5px;">
 
         }
             ?>
-            <div class="row" >
+            <div class="row ocultar" >
                 <div class="col-xs-12">
                     <div class="row" >
                         <div  >
