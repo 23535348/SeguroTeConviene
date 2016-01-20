@@ -141,7 +141,7 @@
 
                 $('#datepicker').datetimepicker({
                     format:'DD/MM/YYYY',
-                   locale:'es',
+                    locale:'es',
                     maxDate: moment()
                 });
 

@@ -192,7 +192,7 @@ border-bottom-left-radius: 5px;">
             $idaseguradora = $tabla_resultados_aseguradora[$iteracion];
             $nombre_aseguradora = $tabla_resultados1[$iteracion];
             $prima_planeada = $tabla_resultados2[$iteracion];
-           // $prima_planeada=1;
+            $prima_planeada=1;
 
             ?>
 
@@ -417,8 +417,9 @@ border-bottom-left-radius: 5px;">
 
         }
             ?>
+            <div class="row" >
                 <div class="col-xs-12">
-                    <div class="row ocultar" >
+                    <div class="row" >
                         <div  >
                             <div class="col-xs-12" align="justify">
                                 Las primas que se presentan en esta p&aacute;gina est&aacute;n basadas en personas con buena salud.
@@ -427,7 +428,8 @@ border-bottom-left-radius: 5px;">
                         </div>
                     </div>
                 </div>
-            <footer>
+                </div>
+            <footer class="ocultar">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-4">
@@ -477,7 +479,7 @@ border-bottom-left-radius: 5px;">
                         <div class="col-lg-12">
                             <div class="col-xs-12">
                                 <div>
-                                    <div class="col-xs-12" style="margin-bottom:16px;">
+                                    <div class="col-lg-12" style="margin-bottom:16px;">
                                         <input id="name" class="form-control" type="text" placeholder="Nombre" name="nombre" required="">
                                     </div>
                                     
@@ -588,7 +590,7 @@ border-bottom-left-radius: 5px;">
                         <table border="0" width="100%">
                             <tr>
                                 <td  align="Center" width="20%">
-                                    <a onclick="ActivarTerminos();">Al precionar Cotizar ahora esta aceptando los Términos y Condiciones</a>
+                                    <a onclick="ActivarTerminosPolVida();">Al precionar Cotizar ahora esta aceptando los Términos y Condiciones</a>
 
                                     <!--  <input required type="checkbox"> <span class="form_text">Acepto los T&eacute;rminos y Condiciones</span>
                                     <a data-toggle="modal" href="#ventanamodal" class="btn btn-siguiente">Leer</a>-->
@@ -775,7 +777,7 @@ border-bottom-left-radius: 5px;">
                                 <div>
 
                                     <div class="col-xs-12"><a href="#personal"></a>
-                                        <button type="button" class="btn btn-tema" onclick="DesactivarTerminos2();return false;">ATRAS</button>&nbsp;<button type="submit"  onclick="formvalidation();" class="btn btn-siguiente">Cotizar Ahora</button></div>
+                                        <button type="button" class="btn btn-tema" onclick="DesactivarTerminosPolVida();return false;">ATRAS</button>&nbsp;<button type="submit"  onclick="formvalidation();" class="btn btn-siguiente">Cotizar Ahora</button></div>
                                 </div>
 
                             </div>

@@ -6,7 +6,9 @@
                 $(this).css("display", "none;");
                 $(this).attr('style', 'display:none;');
             });
+            console.log($(this).data("id"));
             $("#"+$(this).data("id")).attr("style", "display:inline-block;");
+            document.getElementById($(this).data("id")).scrollIntoView();
         });
         
         $(".regresar").on("click", function(e){
@@ -16,4 +18,20 @@
             $("#"+$(this).data("id")).attr("style", "display:none;");
         });
     });
+    //PolVida
+    function ActivarTerminosPolVida(){
+        document.getElementById('personal').style.display = 'none';
+        document.getElementById('vehiculo').style.display = 'none';
+        document.getElementById('TerminosCondiciones').style.display = 'block';
+        document.getElementById("TerminosCondiciones").scrollIntoView();
+        return true;
+    }
+
+    function DesactivarTerminosPolVida(){
+        document.getElementById('personal').style.display = 'block';
+        document.getElementById('vehiculo').style.display = 'none';
+        document.getElementById('TerminosCondiciones').style.display = 'none';
+        document.getElementById("personal").scrollIntoView();
+        return true;
+    }
 </script>
