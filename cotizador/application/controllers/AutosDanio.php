@@ -33,7 +33,7 @@ class AutosDanio extends CI_Controller
         list($dia, $mes, $ano) = explode("/", $fecha_nacimiento);
 
         $YearDiff = date("Y") - $ano;
-
+        $DayDiff= $dia;
         if (date("m") < $mes || (date("m") == $mes && date("d") < $DayDiff)) {
             $YearDiff--;
         }
@@ -1390,37 +1390,37 @@ class AutosDanio extends CI_Controller
     public function complete()
     {
         if(empty($_POST)) {
-            redirect("Location: http://www.seguroteconviene.com/"); //Redirige
+            //redirect("Location: http://www.seguroteconviene.com/"); //Redirige
         }
 
-        $datos['precio_venta'] = $this->input->post('precio_venta');
+        $datos['precio_venta'] = $this->input->get('precio_venta');
         $datos['precio_ventaForm']=number_format($datos['precio_venta'], "2", ".", ",");
-        $edad = $this->CalculoEdad($this->input->post('fecha_nac'));
-        $fecha_nac = $this->input->post('fecha_nac');
-        $estado_civil = $this->input->post('estado_civil');
-        $sexo = $this->input->post('sexo');
-        $marca = $this->input->post('marca');
-        $anio_auto =$this->input->post('anio_auto');
-        $tipo_auto =$this->input->post('tipo_auto');
-        $estado_auto =$this->input->post('estado_auto');
-        $modelo =$this->input->post('modelo');
-        $apellido =$this->input->post('apellido');
-        $nombre =$this->input->post('nombre');
-        $cedula =$this->input->post('cedula');
-        $email =$this->input->post('email');
-        $telefono =$this->input->post('telefono');
-        $dcomprensivo =$this->input->post('dcomprensivo');
-        $dcolision =$this->input->post('dcolision');
-        $plan =$this->input->post('plan');
-        $company =$this->input->post('company');
-        $poliza =$this->input->post('poliza');
-        $celular =$this->input->post('celular');
-        $idaseguradora =$this->input->post('idaseguradora');
-        $monto = $this->input->post('monto');
+        $edad = $this->CalculoEdad($this->input->get('fecha_nac'));
+        $fecha_nac = $this->input->get('fecha_nac');
+        $estado_civil = $this->input->get('estado_civil');
+        $sexo = $this->input->get('sexo');
+        $marca = $this->input->get('marca');
+        $anio_auto =$this->input->get('anio_auto');
+        $tipo_auto =$this->input->get('tipo_auto');
+        $estado_auto =$this->input->get('estado_auto');
+        $modelo =$this->input->get('modelo');
+        $apellido =$this->input->get('apellido');
+        $nombre =$this->input->get('nombre');
+        $cedula =$this->input->get('cedula');
+        $email =$this->input->get('email');
+        $telefono =$this->input->get('telefono');
+        $dcomprensivo =$this->input->get('dcomprensivo');
+        $dcolision =$this->input->get('dcolision');
+        $plan =$this->input->get('plan');
+        $company =$this->input->get('company');
+        $poliza =$this->input->get('poliza');
+        $celular =$this->input->get('celular');
+        $idaseguradora =$this->input->get('idaseguradora');
+        $monto = $this->input->get('monto');
 
         $planF=$plan;
         $uso_auto = "OFICINA";
-        $historial_manejo = $this->input->post('historial');
+        $historial_manejo = $this->input->get('historial');
         $datos['edad']=$edad;
         $datos['estado_civil']=$estado_civil;
         $datos['sexo']=$sexo;
@@ -1527,7 +1527,7 @@ class AutosDanio extends CI_Controller
     public function autos_complete()
     {
         $this->load->library('FPDF');
-
+        $this->load->library('Mailer');
         $precio_venta = $this->input->post('precio_venta');
         $edad = $this->CalculoEdad($this->input->post('fecha_nac'));
         $fecha_nac = $this->input->post('fecha_nac');
@@ -1680,7 +1680,10 @@ class AutosDanio extends CI_Controller
         $datos['pago_voluntario']=$pago_voluntario;
         $datos['pago_UNPAGO']=$pago_UNPAGO;
         $datos['pago_ACH']=$pago_ACH;
-
+        $datos['AddReplyTo']="deivisjose.d@gmail.com";
+        $datos['SetFrom']="deivisjose.d@gmail.com";
+        $plan=$datos['plan_tipo'];
+        $nombre= $datos['company'];
 
 
         $counter_coberturas = 0;
@@ -1695,6 +1698,26 @@ class AutosDanio extends CI_Controller
         }
 
 
+
+        $nombre_aseguradora = $this->Autos_danio->get_aseguradoras_nombre($nombre);
+        foreach ($nombre_aseguradora as $filas1) {
+
+            $idaseguradora=$filas1->idaseguradoras;
+        }
+        $counter_coberturas = 0;
+        $plan_aseguradora = $this->Autos_danio->get_plan_aseguradora_autos_tercero($plan,$idaseguradora);
+        if($plan_aseguradora!=0) {
+
+            foreach ($plan_aseguradora as $filas1) {
+                $cobertura_especial[$counter_coberturas] =  $filas1->cobertura;
+                $datos['cobertura_especial'][$counter_coberturas]=$filas1->cobertura;
+                $counter_coberturas = $counter_coberturas + 1;
+
+
+            }
+
+        }
+        $datos['counter_coberturas']=$counter_coberturas;
 
 
         $this->load->view('autosDanio/autos_complete', $datos);
@@ -1739,7 +1762,7 @@ class AutosDanio extends CI_Controller
         }
         $datos['counter_coberturas']=$counter_coberturas;
 
-        $this->load->view('autosDanio/imprimir_terceros',$datos);
+        $this->load->view('autosDanio/imprimir_terceros_pdf',$datos);
     }
 
 

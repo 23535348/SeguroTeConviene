@@ -1,6 +1,6 @@
 <?php
-//header('Content-disposition: attachment; filename='.$solicitud.'.pdf');
-//header('Content-type: application/pdf');
+header('Content-disposition: attachment; filename='.$_GET["id"].'.pdf');
+header('Content-type: application/pdf');
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',10);
@@ -15,19 +15,19 @@ $pdf->SetY(35);
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(189,8,utf8_decode('De acuerdo a su solicitud, a continuación le presentamos su propuesta.'),0,1,'L');
 $pdf->Ln(3);
-$pdf->Cell(189,8,utf8_decode('Propuesto asegurado: '.$nombre),1,1,'L');
-$pdf->Cell(189,8,utf8_decode('Telefono: '.$telefono),1,1,'L');
-$pdf->Cell(189,8,utf8_decode('Celular: '.$celular),1,1,'L');
-$pdf->Cell(189,8,utf8_decode('Correo Electrónico: '.$email),1,1,'L');
-$pdf->Cell(189,8,utf8_decode('Cedula: '.$cedula),1,1,'L');
+$pdf->Cell(189,8,utf8_decode('Propuesto asegurado: '.$_GET['nombre']),1,1,'L');
+$pdf->Cell(189,8,utf8_decode('Telefono: '.$_GET['telefono']),1,1,'L');
+$pdf->Cell(189,8,utf8_decode('Celular: '.$_GET['celular']),1,1,'L');
+$pdf->Cell(189,8,utf8_decode('Correo Electrónico: '.$_GET['email']),1,1,'L');
+$pdf->Cell(189,8,utf8_decode('Cedula: '.$_GET['cedula']),1,1,'L');
 $pdf->Ln(3);
-$pdf->Cell(189,8,utf8_decode("Compañia de seguros: ".$company.""),1,1,'L');
+$pdf->Cell(189,8,utf8_decode("Compañia de seguros: ".$_GET['company'].""),1,1,'L');
 $pdf->Ln(5);
 $pdf->SetTextColor(255,0,0);
-$pdf->Cell(59,5,utf8_decode("Cotización No.: ".$solicitud.""),1,0,'C');
+$pdf->Cell(59,5,utf8_decode("Cotización No.: ".$_GET['id'].""),1,0,'C');
 $pdf->SetTextColor(0,0,0);
 $pdf->Cell(65,5,utf8_decode('Ramo: AUTO'),1,0,'C');
-$pdf->Cell(65,5,utf8_decode("Fecha: ".$fecha_solicitud.""),1,1,'C');
+$pdf->Cell(65,5,utf8_decode("Fecha: ".$_GET['fecha_solicitud'].""),1,1,'C');
 $pdf->Ln(5);
 $pdf->SetTextColor(0,102,204);
 $pdf->Cell(189,5,utf8_decode('Coberturas y Límites'),1,1,'C');
@@ -37,15 +37,15 @@ $pdf->Cell(99,5,utf8_decode('Límites de responsabilidad'),1,0,'C');
 $pdf->Cell(30,5,utf8_decode('Deducibles'),1,1,'C');
 
 $pdf->Cell(60,5,utf8_decode('Lesiones corporales'),1,0,'L');
-$pdf->Cell(99,5,utf8_decode($mensaje_lc),1,0,'L');
+$pdf->Cell(99,5,utf8_decode($_GET['mensaje_lc']),1,0,'L');
 $pdf->Cell(30,5,utf8_decode('No aplica.'),1,1,'C');
 
 $pdf->Cell(60,5,utf8_decode('Daños a propiedad ajena'),1,0,'L');
-$pdf->Cell(99,5,utf8_decode($mensaje_dpa),1,0,'L');
+$pdf->Cell(99,5,utf8_decode($_GET['mensaje_dpa']),1,0,'L');
 $pdf->Cell(30,5,utf8_decode('No aplica.'),1,1,'C');
 
 $pdf->Cell(60,5,utf8_decode('Gastos Médicos'),1,0,'L');
-$pdf->Cell(99,5,utf8_decode($mensaje_gm),1,0,'L');
+$pdf->Cell(99,5,utf8_decode($_GET['mensaje_gm']),1,0,'L');
 $pdf->Cell(30,5,utf8_decode('No aplica.'),1,1,'C');
 $pdf->Ln(5);
 $pdf->SetTextColor(0,102,204);
@@ -53,7 +53,7 @@ $pdf->Cell(189,5,utf8_decode('Formas de pago'),1,1,'C');
 $pdf->SetTextColor(0,0,0);
 $pdf->Cell(35,5,utf8_decode('Pago al contado'),1,0,'C');
 $pdf->Cell(119,5,utf8_decode('Un solo pago (al momento de recibir la póliza)'),1,0,'C');
-$pdf->Cell(35,5,utf8_decode("B/. ".number_format($monto, "2", ".", ",").""),1,1,'C');
+$pdf->Cell(35,5,utf8_decode("B/. ".number_format($_GET['monto'], "2", ".", ",").""),1,1,'C');
 $pdf->Ln(5);
 $pdf->SetTextColor(0,102,204);
 $pdf->Cell(40,5,utf8_decode('Beneficios incluidos'),1,1,'L');
@@ -79,10 +79,10 @@ $pdf->Cell(189,5,utf8_decode('4. Formulario de descuento (Será entregada a uste
 $pdf->Ln(3);
 $pdf->Cell(189,5,utf8_decode('Llámenos al: 227-7777'),0,1,'L');
 $pdf->Cell(189,5,utf8_decode('Escríbanos a: info@seguroteconviene.com'),0,1,'L');
-//$pdf->Output('solicitudes/'.$solicitud.'.pdf', 'D');
-$doc = $pdf->Output('solicitudes/'.$solicitud.'.pdf', 'S');
+$pdf->Output('solicitudes/'.$_GET["id"].'.pdf', 'D');
+$doc = $pdf->Output('solicitudes/'.$_GET["id"].'.pdf', 'S');
 
-//readfile('solicitudes/'.$solicitud.'.pdf');
+readfile('solicitudes/'.$_GET["id"].'.pdf');
 
 $mail= new Mailer(); // defaults to using php "mail()"
 $mail->IsSendmail(); // telling the class to use SendMail transport
@@ -93,17 +93,17 @@ Te estamos muy agradecidos por la oportunidad que nos brindas de servirte, y te 
 De tener alguna pregunta o consulta sobre el servicio que te prestamos no dudes en llamarnos o escribirnos y con gusto te ayudaremos.<br><br><img src='http://166.78.253.30/jimforstc/img/footeremail.jpg' alt='Seguro te conviene Footer'>";
 
 
-//$body = eregi_replace("[\]",'',$body);
+$body = eregi_replace("[\]",'',$body);
 //$mail->AddReplyTo("info@stc.com","Seguro Te Conviene");
 //$mail->SetFrom("info@stc.com","Seguro Te Conviene");
 $mail->AddReplyTo($AddReplyTo,"Seguro Te Conviene");
 $mail->SetFrom($SetFrom,"Seguro Te Conviene");
-$address = $email;
+$address = $_GET['email'];
 $mail->AddAddress($address);
 $mail->SMTPDebug = true;
 $mail->Subject    = "Solicitud creada";
 $mail->MsgHTML($body);
-$mail->AddStringAttachment($doc, 'solicitudes/'.$solicitud.'.pdf', 'base64', 'application/pdf');
+$mail->AddStringAttachment($doc, 'solicitudes/'.$_GET["id"].'.pdf', 'base64', 'application/pdf');
 //$mail->AddAttachment("$doc");
 //$mail->AddAttachment("solicitudes/".$_GET["id"]."","solicitudes/".$_GET["id"].".pdf"); // attachment
 $mail->Send();

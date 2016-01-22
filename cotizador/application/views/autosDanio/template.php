@@ -16,7 +16,7 @@
     <section id="featured">
         <!-- start slider -->
         <div class="container">
-            <div class="row">
+            <div  id="row_letas" class="row">
                 <div class="col-xs-12">
                     <!-- Slider -->
 
@@ -83,7 +83,7 @@
 <?}}else{
     $variableStyle='display:none';
     ?>
-    <div id="divDatosPersonales" >
+    <div id="row_img_num">
     <div class="row" align="center">
         <div class="col-xs-12">
 
@@ -103,6 +103,26 @@
         </div>
     </div>
     </div>
+    <div id="divDatosPersonales" style="display:none">
+        <div class="row" align="center">
+            <div class="col-xs-12">
+
+                <div id=1 class="col-xs-6">
+                    <div style="">
+                        <img class="img-responsive" src="<?= $url ?>img/1_select.png">
+                    </div>
+                </div>
+                <div id=2 class="col-xs-6">
+                    <div style="">
+                        <img class="img-responsive"  src="<?= $url ?>img/2_no_select.png">
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
     <?}  setlocale(LC_MONETARY, 'en_US');?>
 
 
@@ -111,8 +131,8 @@
 <? if(isset($brandon)){
     if($brandon==1){?>
 
-        <div class="row">
-             <div class="col-xs-12">
+        <div class="row hidden-xs" id="resultados">
+             <div class="col-xs-12 ">
             <div class="indicadores col-xs-3 col-offset-3">
                 Lesiones Corporales
                 <!--<span id="tooltip" data-toggle="tooltip" data-placement="right" data-original-title="Lesiones Corporales:  Le brinda cobertura hasta el l&iacute;mite contratado en caso de que usted lesione corporalmente a terceros en caso de accidente." class="glyphicon glyphicon-info-sign black"></span>
@@ -219,17 +239,8 @@
             </div>
         </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
+        <hr>
+    <div  class="" id="resultados1">
 
 
 <?
@@ -237,8 +248,10 @@
         while ($iteracion < 5) {
         ?>
 
-        <div class="row">
-
+        <!--<div class="row">-->
+            <div id="tab_<?=$iteracion?>"  class="col-xs-12 well tab-pane   <? if($iteracion==1) {
+                $clase="active";
+            }else{$clase="";} echo "$clase";?>">
             <?php
             $idaseguradora = $r0[$iteracion];
             $nombre_aseguradora = $r1[$iteracion];
@@ -264,23 +277,23 @@
 
             switch ($nombre_aseguradora){
                 case "Internacional de Seguros":?>
-                    <div class="logos col-xs-3 col-offset-3" align="center"><img src="<?= $url ?>img/logos/iseguros133.png"></div>
+                    <div class="logos col-xs-12" align="center"><img src="<?= $url ?>img/logos/iseguros133.png"></div>
                     <?php $idaseguradora=1; ?>
                     <?php break;
                 case "Generali":?>
-                    <div class="logos col-xs-3 col-offset-3" align="center"><img src="<?= $url ?>img/logos/generali.png"></div>
+                    <div class="logos col-xs-12" align="center"><img src="<?= $url ?>img/logos/generali.png"></div>
                     <?php $idaseguradora=2; ?>
                     <?php break;
                 case "ASSA":?>
-                    <div class="logos col-xs-3 col-offset-3" align="center"><img src="<?= $url ?>img/logos/assa.png"></div>
+                    <div class="logos col-xs-12" align="center"><img src="<?= $url ?>img/logos/assa.png"></div>
                     <?php $idaseguradora=3; ?>
                     <?php break;
                 case "Banesco":?>
-                    <div class="logos col-xs-3 col-offset-3" align="center"><img src="<?= $url ?>img/logos/banesco.jpg"></div>
+                    <div class="logos col-xs-12" align="center"><img src="<?= $url ?>img/logos/banesco.jpg"></div>
                     <?php $idaseguradora=4; ?>
                     <?php break;
                 case "Acerta":?>
-                    <div class="logos col-xs-3 col-offset-3" align="center"><img src="<?= $url ?>img/logos/acerta.png"></div>
+                    <div class="logos col-xs-12" align="center"><img src="<?= $url ?>img/logos/acerta.png"></div>
                     <?php $idaseguradora=5; ?>
                     <?php break;
                 /*  case "Banistmo":?>
@@ -288,11 +301,13 @@
                                                       <?php $idaseguradora=6; ?>
                       <?php break; */
                 case "SURA":?>
-                    <div class="logos col-xs-3 col-offset-3" align="center"><img src="<?= $url ?>img/logos/sura.png"></div>
+                    <div class="logos col-xs-12" align="center"><img src="<?= $url ?>img/logos/sura.png"></div>
                     <?php $idaseguradora=7; ?>
                     <?php break;
             } ?>
-            <div class="aseguradoras col-xs-3" align="center">
+                <div class="col-xs-12">
+                    <div class="row">
+            <div class="col-xs-12 aseguradoras" align="center">
                 <div class="basico"><p>Prima Anual</p></div>
                 <div class="col-xs-6 precio">B/.<?php echo number_format($prima_basico_total, "2", ".", ","); ?></div><?php if($prima_basico_total<1){?> <a href="#?<?php $empresa=$empresa+1;?>"><button class="btn btn-warning btn-small" style="margin-top:0;" type="button" disabled><p class="msj">No Cotizable</p></button></a><?php } else {?>
 
@@ -415,7 +430,7 @@
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal --><?php } ?>
             </div>
-            <div class="col-xs-3 aseguradoras" align="center"><div class="basico"><p>Prima Anual</p></div>
+            <div class="col-xs-12 aseguradoras" align="center"><div class="basico"><p>Prima Anual</p></div>
                 <div class="col-xs-6 precio">B/.<?php echo number_format($prima_ejecutivo_total, "2", ".", ","); ?></div>
                 <?php if($prima_ejecutivo_total<1){?><button class="btn btn-warning btn-small" style="margin-top:0;" type="button" disabled><p class="msj">No Cotizable</p></button><?php } else {?>
 
@@ -543,7 +558,7 @@
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal --><?php } ?>
             </div>
-            <div class="col-xs-3 aseguradoras" align="center"><div class="basico"><p>Prima Anual</p></div>
+            <div class="col-xs-12 aseguradoras" align="center"><div class="basico"><p>Prima Anual</p></div>
                 <div class="col-xs-6 precio">B/.<?php echo number_format($prima_premium_total, "2", ".", ","); ?></div>
                 <?php if($prima_premium_total<1){?><button class="btn btn-warning btn-small" style="margin-top:0;" type="button" disabled><p class="msj">No Cotizable</p></button><?php } else {?>
 
@@ -664,15 +679,19 @@
       </div>
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal --><?php } ?>
-            </div></div>
+            </div>
+                    </div>
+                </div>
         <?php
         $iteracion++;
     }
+$iteracion=$iteracion-1;
+?>
 
 
+     </div>
 
-
-    }
+        <?  }
 
 }else{?>
 
@@ -719,8 +738,7 @@
                             <input class="form-control" type="text" placeholder="Cédula o pasaporte" name="cedula" required="" tabindex="3">
                         </div>
                         <div class="col-xs-12" style="margin-bottom:16px;">
-                            <input id="2" class="form-control" type="text" placeholder="Fec.Nac: dd/mm/aaaa " name="fecha_nac" tabindex="5" required="">
-
+                            <input  id="datepicker" class="form-control" type="text" placeholder="Fec.Nac: dd/mm/aaaa "  name="fecha_nac" tabindex="5" required="">
 
 
                         </div>
