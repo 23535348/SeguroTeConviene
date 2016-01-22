@@ -6,7 +6,7 @@
         <!-- start slider -->
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-xs-12">
                     <!-- Slider -->
 
                     <div class="gris">
@@ -23,14 +23,14 @@
 
 <div style=" margin: 0 auto 0 auto; padding-top:30px;">
     <div class="row">
-    <div class="col-lg-12">
+    <div class="col-xs-12">
 
 
     <div class="col-lg-2">
     </div>
 
 
-    <div class="col-lg-8">
+    <div class="col-xs-12">
     <!-- 1era tabla -->
     <table class="table table-bordered">
 <tr>
@@ -58,7 +58,7 @@
 
     <!-- 2da tabla -->
 <div style=" margin: 0 auto 0 auto; text-align:center;">
-<table class="table table-bordered">
+<table class="table-responsive table-bordered">
 <tr>
 <td colspan=2; style="color:#CC0000; font-weight:bold;">Coberturas Contratadas</td>
 </tr>
@@ -101,7 +101,7 @@ echo "Incendio y/o Impacto de Rayo, Humo u Hollin, Explosión, Impacto de Vehíc
 </div>
 <!-- 5ta tabla -->
 <div style=" margin: 0 auto 0 auto;">
-<table class="table table-bordered">
+<table class="table-responsive  table-bordered">
 <tr>
 <td colspan=3 style="color:#CC0000; font-weight:bold; text-align:center;">Suma Asegurada</td>
 </tr>
@@ -179,20 +179,15 @@ echo "Incendio y/o Impacto de Rayo, Humo u Hollin, Explosión, Impacto de Vehíc
                 </tr>
             </table>
         </div>
-        <div class="col-lg-12">
+<div class="col-xs-12" style="text-align: center;">
             <div class="col-lg-4">
                 <a href="javascript:history.back(-1);">
-                    <button class="btn" style="background-color:#428bca;border-color: #428bca; color: #fff;margin-top:10px; color: #fff;" >
+                    <button class="btn" style="background-color:#428bca;border-color: #428bca; color: #fff;margin-top:10px; color: #fff;width: 135px;" >
                         Regresar
                     </button></a>
 
             </div>
-            <div class="col-lg-4">
-                <a  href="javascript:window.history.go(-2);">
-                    <button class="btn " style="background-color:#428bca;border-color: #428bca; color: #fff;margin-top:10px; color: #fff;" >
-                        Actualizar Datos
-                    </button></a>
-            </div>
+            
             <div class="col-lg-4">
                 <form  action="complete" method="POST">
                     <input type="hidden" name="nombre" value="<?=$nombre?>">

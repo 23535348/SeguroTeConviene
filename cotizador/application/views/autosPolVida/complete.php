@@ -25,14 +25,14 @@
         <div class="row">
             <div class="col-lg-2">
             </div>
-            <div class="col-lg-8  table-bordered">
+            <div class="col-lg-8 ">
                 <div class="col-lg-12">
                     <div style="text-align:left; margin: 0 auto 0 auto;"><br>
-                        <p style="font-size:18px;">Gracias por utilizar nuestros servicios.</p>
-                        <p style="font-size:18px;">En <b style="color:#FF9933;">www.seguroteconviene.com</b> nos esforzamos por ofrecerles las tarifas más bajas del mercado, con las mejores coberturas y condiciones
+                        <p >Gracias por utilizar nuestros servicios.</p>
+                        <p >En <b style="color:#FF9933;">www.seguroteconviene.com</b> nos esforzamos por ofrecerles las tarifas más bajas del mercado, con las mejores coberturas y condiciones
                             a través de las más reconocidas y sólidas compañias de seguro del país.</p>
-                        <p style="font-size:18px;">En las próximas 24 horas laborables uno de nuestros ejecutivos le estará contactando.</p>
-                        <p style="font-size:18px;">Para referencia, su número de orden es: <b style="color:#FF9933;"><?php echo $id_registro; ?></b></p>
+                        <p >En las próximas 24 horas laborables uno de nuestros ejecutivos le estará contactando.</p>
+                        <p >Para referencia, su número de orden es: <b style="color:#FF9933;"><?php echo $id_registro; ?></b></p>
                     </div>
                 </div>
 

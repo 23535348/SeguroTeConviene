@@ -31,7 +31,7 @@
 
                 </div>
             </div>
-
+        </div>
 
 
     </section>
@@ -192,7 +192,7 @@ border-bottom-left-radius: 5px;">
             $idaseguradora = $tabla_resultados_aseguradora[$iteracion];
             $nombre_aseguradora = $tabla_resultados1[$iteracion];
             $prima_planeada = $tabla_resultados2[$iteracion];
-            $prima_planeada=1;
+            //$prima_planeada=1;
 
             ?>
 

@@ -273,6 +273,7 @@ class AutosPolIncendio extends CI_Controller
     public function complete()
     {
         $this->load->library('FPDF');
+        $this->load->library('Mailer');
         if(empty($_POST)) {
             redirect("Location: http://www.seguroteconviene.com/"); //Redirige
         }
@@ -347,8 +348,20 @@ class AutosPolIncendio extends CI_Controller
 
             $datos['id_registro'] =  $filas1->id;
         }
-        $datos['fecha_solicitud']=$solicitud;
+        $datos['fecha_solicitud']=$solicitud; 
         $datos['plan_tipo'] =  $tipo_plan;
+        
+        $datos['AddReplyTo']="deivisjose.d@gmail.com";
+        $datos['SetFrom']="deivisjose.d@gmail.com";
+
+        if($this->input->post('sector')=="CIUDAD"){ $mensaje_sector = "Ciudad de Panamá";}
+        if($this->input->post('sector')=="COSTADELESTE"){ $mensaje_sector = "Costa del Este";}
+        if($this->input->post('sector')=="INTERIOR"){ $mensaje_sector = "Interior del País";}
+        if($this->input->post('bien')=="APTO"){ $mensaje_bien = "Apartamento";}
+        else { $mensaje_bien = "Casa";}
+        $datos['mensaje_bien']=$mensaje_bien; 
+        $datos['mensaje_sector']=$mensaje_sector;
+        
         $this->load->view('autosPolIncendio/complete', $datos);
 
     }
@@ -358,7 +371,7 @@ class AutosPolIncendio extends CI_Controller
 
     public function seguro_complete()
     {
-
+        
 
 
         $apellido =$this->input->post('apellido');
@@ -379,6 +392,7 @@ class AutosPolIncendio extends CI_Controller
         $poliza = $this->input->post('poliza');
         $company = $this->input->post('company');
         $idaseguradora =$this->input->post('idaseguradora');
+        
 
         $uso_auto = "OFICINA";
 
