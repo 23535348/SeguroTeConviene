@@ -1,6 +1,8 @@
 <?php $this->load->view('tema/header2.php'); ?>
+<?php $this->load->view('tema/js_poliza_salud.php'); ?>
 <?php $this->load->view('tema/add_3.php'); ?>
 <?php $url=base_url();?>
+
     <script type="text/javascript">
 
         $(document).on("click", ".removeButton", function(){
@@ -20,13 +22,13 @@
             var filas_index = total_filas;
             total_filas = total_filas -1;
 
-            var hijo_izq = total_filas + filas_index ;
+            var hijo_izq = total_filas +1 ;
             var hijo_der = total_filas + filas_index + 1;
 
             //$('#cotizador > tbody > tr')
             //$('#site_id_'+id).after().append('<tr id="delete"></tr>');
-            var template = "<tr id='fila_hijo_"+filas_index+"'><td  valign='top'>&nbsp;</td><td   valign='top' > <div style='float: right;width: 300px;margin-left: 0px;'><div id='hijo_fecha_nuevo_izq' class='col-lg-12' style='margin-bottom:16px;'><input id='InputHijo"+hijo_izq+"' tabindex='1' type='text' class='form-control fecha_hijo' name='fecha_nac_hijo_izq[]' placeholder='Fecha Nacimiento Hijo " + hijo_izq + "' required></div></div></td><td   valign='top'> <div id='hijo_fecha_nuevo_der' class='col-lg-12' style='margin-bottom:16px;'><input id='InputHijo"+hijo_der+"' tabindex='5' type='text' class='form-control fecha_hijo'  name='fecha_nac_hijo_der[]' placeholder='Fecha de Nacimiento Hijo " + hijo_der + "'></div> </td><td  valign='center'>&nbsp;<a href='#' style='color:#000;' class='removeButton'><img class='' src=<?= $url ?>img/eliminar.png title='[Eliminar Hijos]'>  </A></td></tr>";
-            // var template = "<tr style='float: right;width: 300px;margin-left: 0px;'><td  valign='top'>&nbsp;</td><td   valign='top' class='col-lg-12' style='margin-bottom:16px;'>  <input tabindex='1' type='text' class='form-control' name='nombre' placeholder='Nombre Del Hijo' required> </td><td   valign='top'>  <input tabindex='5' type='text' class='form-control fecha_hijo'  name='fecha_nac_hijo' placeholder='Fecha de Nacimiento'><a href='#' style='color:#000;' class='removeButton'>X</A>  </td><td  valign='top'>&nbsp;</td></tr> ";
+            var template = "<tr id='fila_hijo_"+filas_index+"'><td  valign='top'>&nbsp;</td><td   valign='top' style='width: 90%;' > <div style='float: right;margin-left: 0px;width: 100%;'><div id='hijo_fecha_nuevo_izq' class='col-xs-12' style='margin-bottom:16px;'><input id='InputHijo"+hijo_izq+"' tabindex='1' type='text' class='form-control datatimer' name='fecha_nac_hijo_izq[]' placeholder='Fecha Nacimiento Hijo " + hijo_izq + "' required></div></div></td><td  valign='center'>&nbsp;<a href='#' style='color:#000;' class='removeButton'><img class='' src=<?= $url ?>img/eliminar.png title='[Eliminar Hijos]'>  </A></td></tr>";
+            // var template = "<tr style='float: right;width: 300px;margin-left: 0px;'><td  valign='top'>&nbsp;</td><td   valign='top' class='col-xs-12' style='margin-bottom:16px;'>  <input tabindex='1' type='text' class='form-control' name='nombre' placeholder='Nombre Del Hijo' required> </td><td   valign='top'>  <input tabindex='5' type='text' class='form-control fecha_hijo'  name='fecha_nac_hijo' placeholder='Fecha de Nacimiento'><a href='#' style='color:#000;' class='removeButton'>X</A>  </td><td  valign='top'>&nbsp;</td></tr> ";
 
 
             $("#fila_hijo_"+total_filas).after(template);
@@ -39,16 +41,14 @@
             //var template2 ='   <p> <input tabindex="5" type="text" class="form-control fecha_hijo picker__input" name="fecha_nac_hijo[]" placeholder="Fecha de Nacimiento" readonly=""><a href="#" id="remScnt">Remove</a></p>';
 
 
-            $('.fecha_hijo').pickadate({
-                selectYears: true,
-                selectMonths: true,
-                selectYears: 200,
-                format: 'dd/mm/yyyy'
-            })
+            
 
 
 
         }
+        $(".datatimer").each(function(){
+            $(this).datetimepicker();
+        });
 
         function formvalidation_e() {
 
@@ -235,52 +235,39 @@
 
     <section id="featured">
         <!-- start slider -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- Slider -->
-
-                    <div class="gris">
+        
+            <div id="row_letas" class="row">
+                <div class="col-xs-12">
+                    <div class="gris_letras">
                         Cotización de Plan de Salud
                     </div>
 
-                    <!-- end slider -->
                 </div>
             </div>
-        </div>
 
 
 
     </section>
+    
     <div id="divActiveVehicle" style="display:none">
     <div class="row" align="center">
-        <div class="col-lg-12">
-            <div id=1 class="col-lg-4">
-                <div style="background-color:#e87b00;width:100%;padding:8px;display:inline-block;-webkit-border-top-left-radius: 5px;
--webkit-border-bottom-left-radius: 5px;
--moz-border-radius-topleft: 5px;
--moz-border-radius-bottomleft: 5px;
-border-top-left-radius: 5px;
-border-bottom-left-radius: 5px;">
-                    <img src="<?= $url ?>img/1.png">
-                    <b>DATOS PERSONALES</b>
+        <div class="col-xs-12">
+            <div id=1 class="col-xs-4">
+                <div style="">
+                    <img class="img-responsive"  src="<?= $url ?>img/1_select.png">
+
                 </div>
             </div>
-            <div id=2 class="col-lg-4">
-                <div style="background-color:#e87b00;width:100%;padding:8px;display:inline-block;">
-                    <img src="<?= $url ?>img/2.png">
-                    <b> DATOS DEL PLAN</b>
+            <div id=2 class="col-xs-4">
+                <div style="">
+                    <img class="img-responsive" src="<?= $url ?>img/2_select.png">
+
                 </div>
             </div>
-            <div id="3" class="col-lg-4">
-                <div style="background-color:#adadad;width:100%;padding:8px;display:inline-block;-webkit-border-top-right-radius: 5px;
--webkit-border-bottom-right-radius: 5px;
--moz-border-radius-topright: 5px;
--moz-border-radius-bottomright: 5px;
-border-top-right-radius: 5px;
-border-bottom-right-radius: 5px;">
-                    <img src="<?= $url ?>img/3.png">
-                    <b>CONTRATAR SU SEGURO</b>
+            <div id="3" class="col-xs-4">
+                <div style="">
+                    <img class="img-responsive"  src="<?= $url ?>img/3_no_select.png">
+
                 </div>
             </div>
 
@@ -298,7 +285,7 @@ border-bottom-right-radius: 5px;">
     if($_POST['sesion_cotizacion']==1){ $variableStyle="";?>
 
     <div class="row" align="center">
-        <div class="col-lg-12">
+        <div class="col-xs-12">
             <div id=1 class="col-lg-4">
             <div style="background-color:#e87b00;width:100%;padding:8px;display:inline-block;-webkit-border-top-left-radius: 5px;
 -webkit-border-bottom-left-radius: 5px;
@@ -337,33 +324,23 @@ border-bottom-right-radius: 5px;">
     ?>
     <div id="divDatosPersonales" >
     <div class="row" align="center">
-        <div class="col-lg-12">
-            <div id=1 class="col-lg-4">
-                <div style="background-color:#e87b00;width:100%;padding:8px;display:inline-block;-webkit-border-top-left-radius: 5px;
--webkit-border-bottom-left-radius: 5px;
--moz-border-radius-topleft: 5px;
--moz-border-radius-bottomleft: 5px;
-border-top-left-radius: 5px;
-border-bottom-left-radius: 5px;">
-                    <img src="<?= $url ?>img/1.png">
-                    <b>DATOS PERSONALES</b>
+        <div class="col-xs-12">
+            <div id=1 class="col-xs-4">
+                <div style="">
+                    <img class="img-responsive" src="<?= $url ?>img/1_select.png">
+
                 </div>
             </div>
-            <div id=2 class="col-lg-4">
-                <div style="background-color:#adadad;width:100%;padding:8px;display:inline-block;">
-                    <img src="<?= $url ?>img/2.png">
-                    <b> DATOS DEL PLAN</b>
+            <div id=2 class="col-xs-4">
+                <div style="">
+                    <img class="img-responsive"  src="<?= $url ?>img/2_no_select.png">
+
                 </div>
             </div>
-            <div id="3" class="col-lg-4">
-                <div style="background-color:#adadad;width:100%;padding:8px;display:inline-block;-webkit-border-top-right-radius: 5px;
--webkit-border-bottom-right-radius: 5px;
--moz-border-radius-topright: 5px;
--moz-border-radius-bottomright: 5px;
-border-top-right-radius: 5px;
-border-bottom-right-radius: 5px;">
-                    <img src="<?= $url ?>img/3.png">
-                    <b>CONTRATAR SU SEGURO</b>
+            <div id="3" class="col-xs-4">
+                <div style="">
+                    <img class="img-responsive" src="<?= $url ?>img/3_no_select.png">
+
                 </div>
             </div>
 
@@ -380,7 +357,7 @@ border-bottom-right-radius: 5px;">
     if($brandon==1){?>
 
         <div class="row">
-             <div class="col-lg-12">
+             <div class="col-xs-12">
           <div class="aseguradoras col-lg-7" style="margin-left:16.5%;" >
             <div class="encabez">Datos del Plan Salud</div>
             <table border="1" width="100%">
@@ -866,20 +843,32 @@ border-bottom-right-radius: 5px;">
                       <div id="personal" class="tab-pane active">
                         <input id="sesion_cotizacion" type="hidden" value="1" name="sesion_cotizacion">
                     <div class="row" align="center">
-                        <div class="col-lg-12">
+                        <div class="col-xs-12">
                             <div class="col-lg-4">
 
                     <div >
-                        <div class="col-lg-12" style="margin-bottom:16px;">
+                        <div class="col-xs-12" style="margin-bottom:16px;">
 
                             <input id="name" class="form-control" type="text" placeholder="Nombre" name="nombre" required="">
                         </div>
-                        <div class="col-lg-12" style="margin-bottom:16px;">
+                        <div class="col-xs-12"  style="margin-bottom:16px;">
+                                        
+                                         <input class="form-control" type="text" onchange="act_apellido()" placeholder="Apellido"  last name="apellido" required="" tabindex="2">
+
+                                        <script>
+
+                                            function act_apellido()
+                                            {
+                                                document.getElementById("apellido").value=document.getElementById("apellido").value+" "+document.getElementById("last").value;
+                                            }
+                                        </script>
+                                    </div>
+                        <div class="col-xs-12" style="margin-bottom:16px;">
                             <input class="form-control" type="text" placeholder="Cédula o pasaporte" name="cedula" required="" tabindex="3">
                         </div>
-                        <div class="col-lg-12" style="margin-bottom:16px;">
+                        <div class="col-xs-12" style="margin-bottom:16px;">
                             <div class="act">
-                           <input id="2" class="dp2  form-control datepicker picker__input" type="text" placeholder="Fecha de Nacimiento" name="fecha_nac" tabindex="5" required="" readonly="">
+                           <input  id="datepicker" class="form-control" type="text" placeholder="Fec.Nac: dd/mm/aaaa "  name="fecha_nac" tabindex="5" required="">
 
 
                                <!--  <div id="dateP" class="picker" style="display: none"></div><input name="form[formula][GBDAT]" class="picker" id="Nacimiento" required type="text"
@@ -891,10 +880,24 @@ border-bottom-right-radius: 5px;">
                             </div>
 
                         </div>
-                            <div class="col-lg-12" style="margin-bottom:16px;">
+                        <div class="col-xs-12" style="margin-bottom:16px;">
+                                        <select class="form-control" name="sexo" required="" tabindex="4">
+                                            <option value="">Género</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select>
+                                    </div>
+                        <div class="col-xs-12" style="margin-bottom:16px;">
+                                        <select class="form-control" name="nacionalidad" tabindex="6">
+                                            <option value="">Nacionalidad</option>
+                                            <option value="P">Panameño (a)</option>
+                                            <option value="E">Extranjero (a)</option>
+                                        </select>
+                                    </div>
+                            <div class="col-xs-12" style="margin-bottom:16px;">
                                 <input class="form-control" type="text" value="" placeholder="Teléfono Residencial" name="telefono" tabindex="7">
                             </div>
-                            <div class="col-lg-12" style="margin-bottom:16px;">
+                            <div class="col-xs-12" style="margin-bottom:16px;">
                                 <input class="form-control" type="text" value="" placeholder="Celular" name="celular" tabindex="9">
                             </div>
                         </div>
@@ -903,37 +906,14 @@ border-bottom-right-radius: 5px;">
                             <div class="col-lg-4">
 
                                 <div >
-                                    <div class="col-lg-12"  style="margin-bottom:16px;>
-                                        <input id=">
-                                         <input class="form-control" type="text" onchange="act_apellido()" placeholder="Apellido"  last name="apellido" required="" tabindex="2">
+                                    
 
-                                        <script>
-
-                                            function act_apellido()
-                                            {
-                                                document.getElementById("apellido").value=document.getElementById("apellido").value+" "+document.getElementById("last").value;
-                                            }
-                                        </script>
-                                    </div>
-
-                                    <div class="col-lg-12" style="margin-bottom:16px;">
-                                        <select class="form-control" name="sexo" required="" tabindex="4">
-                                            <option value="">Género</option>
-                                            <option value="M">Masculino</option>
-                                            <option value="F">Femenino</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-12" style="margin-bottom:16px;">
-                                        <select class="form-control" name="nacionalidad" tabindex="6">
-                                            <option value="">Nacionalidad</option>
-                                            <option value="P">Panameño (a)</option>
-                                            <option value="E">Extranjero (a)</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-12" style="margin-bottom:16px;">
+                                    
+                                    
+                                    <div class="col-xs-12" style="margin-bottom:16px;">
                                         <input class="form-control" type="text" value="" placeholder="Correo Electrónico" name="correo" tabindex="8">
                                     </div>
-                                    <div class="col-lg-12" style="margin-bottom:16px;">
+                                    <div class="col-xs-12" style="margin-bottom:16px;">
 
                                     </div>
 
@@ -944,48 +924,49 @@ border-bottom-right-radius: 5px;">
                             </div>
 
 
-                                <div class="col-lg-4">
-                                    <div class="col-lg-12">
+                                <!--<div class="col-lg-4">
+                                    <div class="col-xs-12">
                                         <a href="http://www.prontoprintonline.com/">
                                             <img class="img-thumbnail banners" src="<?= $url ?>img/pronto_print.jpg">
                                         </a>
                                     </div>
-                                    <div class="col-lg-12">
+                                    <div class="col-xs-12">
                                         <a href="http://www.fordrealtyweb.com/">
                                             <img class="img-thumbnail " src="<?= $url ?>img/ford_realty.jpg">
                                         </a>
                                     </div>
-                                </div>
+                                </div>-->
 
                                 </div>
                             </div>
 
-                    <div class="row" align="center">
-                        <div class="col-lg-12">
-                            <div id="myTab" class="row">
-                                <div>
-                                    <button style="background-color:#428bca;border-color: #428bca; color: #fff;margin-top:10px; color: #fff;" class="btn" onclick="formvalidation(); return false;" type="button">CONTINUAR</button>
-                                    <a href="#vehiculo"></a>
-                                </div>
-                        </div>
-                        </div>
+                    
+                        <div class="row" align="center">
+                            <div class="col-xs-12">
+                                <div id="myTab" class="row">
+                                    <div>
+                                        <button class="btn btn-siguiente" onclick="formvalidation(); return false;" type="button">Siguiente</button>
+                                        <a href="#vehiculo"></a>
+                                    </div>
+                            </div>
+                            </div>
 
-                    </div>
+                        </div>
             </div>
 
-    <div class="tab-pane" id="vehiculo" style="<?//$variableStyle?>">
+    <div class="tab-pane" id="vehiculo" >
     <input type="hidden" id="brandon" name="brandon" value="1"/>
     <div class="row" align="center">
-    <div class="col-lg-12">
-        <div  class="col-lg-4" >
-            <div  class="col-lg-12"  style="margin-bottom:16px;">
+    <div class="col-xs-12">
+        <div  class="col-xs-12" >
+            <div  class="col-xs-12"  style="margin-bottom:16px;">
                 <select class="form-control" name="alcance_cobertura" required="" tabindex="1">
                     <option value="">Alcance de la Cobertura</option>
                     <option value="1">Solo Local</option>
                     <option value="2">Local e Internacional</option>
                 </select>
             </div>
-            <div class="col-lg-12" style="margin-bottom:16px;">
+            <div class="col-xs-12" style="margin-bottom:16px;">
                 <select class="form-control" name="tipo_proveedor" tabindex="3">
                     <option value="">Tipo de Proveedor</option>
                     <option value="1">Red de Proveedores</option>
@@ -995,8 +976,8 @@ border-bottom-right-radius: 5px;">
 
         </div>
 
-        <div class="col-lg-4" >
-            <div class="col-lg-12" style="margin-bottom:16px;">
+        <div class="col-xs-12" >
+            <div class="col-xs-12" style="margin-bottom:16px;">
                 <select class="form-control" name="suma_asegurada_maxima" tabindex="3">
                     <option value="">Suma Asegurada Máxima</option>
                     <option value="1">Máximo Vitalicio</option>
@@ -1006,7 +987,7 @@ border-bottom-right-radius: 5px;">
 
             </div>
 
-            <div class="col-lg-12" style="margin-bottom:16px;">
+            <div class="col-xs-12" style="margin-bottom:16px;">
                 <select id="tipo_seguro" class="form-control" name="tipo_seguro" tabindex="3">
                     <option value="">Tipo de Seguro</option>
                     <option value="1">Asegurado Solo</option>
@@ -1070,25 +1051,27 @@ border-bottom-right-radius: 5px;">
 
             ?>
 
-            <div id="FechaNacConyugue"  class="col-lg-12  <?php echo $ver_fecha_nac_conyugue ?>" style="margin-bottom:16px;">
-                <input tabindex="10" type="text" class="form-control" id="dp5" name="fecha_nac_conyugue" placeholder="Fecha de Nacimiento Conyugue" value="<? if(isset($_POST['fecha_nac_conyugue'])){ echo $_POST['fecha_nac_conyugue'];} ?>">
+            <div id="FechaNacConyugue"  class="col-xs-12 <?php echo $ver_fecha_nac_conyugue ?>" style="margin-bottom:16px;">
+                
+                <input  id="datepicker" class="form-control datatimer" type="text" placeholder="Fecha de Nacimiento Conyugue"  name="fecha_nac_conyugue" tabindex="5" required="" value="<? if(isset($_POST['fecha_nac_conyugue'])){ echo $_POST['fecha_nac_conyugue'];} ?>">
+                
                 <span class="add-on"><i class="icon-th"></i></span>
             </div>
 
 
-            <table width="100%" border="0" cellspacing="0" cellpadding="0" id="tablaHijos" class=" <?php echo $ver_tabla_hijos ?>" >
+            <table  border="0" cellspacing="0" cellpadding="0" id="tablaHijos" class="table-responsive <?php echo $ver_tabla_hijos ?>" style="border: none;">
 
                 <tr  id="fila_hijo_1">
                     <td  valign="top"width="78">&nbsp;</td>
 
-                    <td   valign="top" width="450" >
+                    <td   valign="top" style="width: 90%;" >
 
 
 
-                        <div style="float: right;width: 300px;margin-left: 0px;">
+                        <div style="float: right;margin-left: 0px;width: 100%;">
 
-                            <div id="hijo_fecha_nuevo_izq" class="col-lg-12" style="margin-bottom:16px;">
-                                <input tabindex="11" type="text" class="form-control fecha_hijo" id="InputHijo1" name="fecha_nac_hijo_izq[]" placeholder="Fecha Nacimiento Hijo 1"  value="<? if(isset($_POST['fecha_nac_hijo_izq'])){ echo $_POST['fecha_nac_hijo_izq']['0'];} ?>">
+                            <div id="hijo_fecha_nuevo_izq" class="col-xs-12" style="margin-bottom:16px;">
+                                <input tabindex="11" id="datepicker" class="form-control datatimer" type="text" placeholder="Fecha Nacimiento Hijo 1"  name="fecha_nac_hijo_izq[]"   value="<? if(isset($_POST['fecha_nac_hijo_izq'])){ echo $_POST['fecha_nac_hijo_izq']['0'];} ?>">
                             </div>
                         </div>
 
@@ -1097,17 +1080,6 @@ border-bottom-right-radius: 5px;">
 
                     </td>
 
-                    <td width="300"   valign="top">
-                        <div style=" float: center;width: 300px;margin-left: 2px;">
-
-                            <div id="hijo_fecha_nuevo_der" class="col-lg-12" style="margin-bottom:16px;">
-                                <input tabindex="12" type="text" class="form-control fecha_hijo" id="InputHijo2" name="fecha_nac_hijo_der[]" placeholder="Fecha de Nacimiento Hijo 2" value="<? if(isset($_POST['fecha_nac_hijo_der'])){ echo $_POST['fecha_nac_hijo_der']['0'];}  ?>">
-                            </div>
-
-
-
-                        </div>
-                    </td>
 
 
 
@@ -1140,14 +1112,14 @@ border-bottom-right-radius: 5px;">
 
                                     <td   valign='top' >
                                         <div style='float: right;width: 300px;margin-left: 0px;'>
-                                            <div id='hijo_fecha_nuevo_izq' class='col-lg-12' style='margin-bottom:16px;'>
+                                            <div id='hijo_fecha_nuevo_izq' class='col-xs-12' style='margin-bottom:16px;'>
                                                 <input id ='InputHijo<?php echo $InputHijoIndice ?>' tabindex='1' type='text' class='form-control fecha_hijo' name='fecha_nac_hijo_izq[]' placeholder='Fecha Nacimiento Hijo ' readonly value="<?= $_POST['fecha_nac_hijo_izq'][$indice_fecha] ?>">
                                             </div>
                                         </div>
                                     </td>
                                     <?php $InputHijoIndice++; ?>
                                     <td   valign='top'>
-                                        <div id='hijo_fecha_nuevo_der' class='col-lg-12' style='margin-bottom:16px;'>
+                                        <div id='hijo_fecha_nuevo_der' class='col-xs-12' style='margin-bottom:16px;'>
                                             <input id='InputHijo<?php echo $InputHijoIndice ?>' tabindex='5' type='text' class='form-control fecha_hijo'  name='fecha_nac_hijo_der[]' placeholder='Fecha de Nacimiento Hijo ' readonly value="<?= $_POST['fecha_nac_hijo_der'][$indice_fecha] ?>">
                                         </div>
                                     </td>
@@ -1184,49 +1156,52 @@ border-bottom-right-radius: 5px;">
 -->
 
             <!--<div class="row" id="myTab">
-                <div class="col-lg-12"><a href="#personal"><button type="button" class="btn btn-primary">ATRAS</button></a>&nbsp;<button type="submit" class="btn btn-primary">CONTINUAR</button></div>
+                <div class="col-xs-12"><a href="#personal"><button type="button" class="btn btn-primary">ATRAS</button></a>&nbsp;<button type="submit" class="btn btn-primary">CONTINUAR</button></div>
             </div>
             -->
-            <table border="0" width="100%">
-                <tr>
-                    <td  align="Center" width="20%">
-                        <input required type="checkbox"> <span class="form_text">Acepto los T&eacute;rminos y Condiciones</span> <a data-toggle="modal" href="#ventanamodal" class="btn" style="background-color:#428bca;border-color: #428bca; color: #fff;margin-top:10px; color: #fff;">Leer</a>
+                <table border="0" width="100%">
+                            <tr>
+                                <td  align="Center" width="20%">
+                                    <a onclick="ActivarTerminosPolSalud();">Al precionar Cotizar ahora esta aceptando los Términos y Condiciones</a>
+
+                                    <!--  <input required type="checkbox"> <span class="form_text">Acepto los T&eacute;rminos y Condiciones</span>
+                                    <a data-toggle="modal" href="#ventanamodal" class="btn btn-siguiente">Leer</a>-->
 
 
-                    </td>
-                </tr>
+                                </td>
+                            </tr>
 
-            </table>
+                        </table>
 
         </div>
 
 
         <!--
             <div style="float: left;width: 200px;margin-left: 2px;">
-                <div class="col-lg-12">
+                <div class="col-xs-12">
                     <img class="img-thumbnail banners" src="img/mapfre.png">
                 </div>
-                <div  class="col-lg-12">
+                <div  class="col-xs-12">
                     <img class="img-thumbnail" src="img/petroautos.png">
                 </div>
             </div>
   -->
 
-        <div  class="col-lg-4">
+      <!--  <div  class="col-lg-4">
 
-            <div  class="col-lg-12">
+            <div  class="col-xs-12">
                 <a href="http://www.fordrealtyweb.com/"><img class="img-thumbnail " src="<?=$url?>img/ford_realty.jpg"></a>
             </div>
-        </div>
+        </div>-->
 
 
     <div class="row" align="center">
-        <div class="col-lg-12">
+        <div class="col-xs-12">
             <div id="myTab" class="row">
                 <div>
 
-                        <div class="col-lg-12"><a href="#personal"></a>
-                            <button type="button" class="btn"style="background-color:#428bca;border-color: #428bca; color: #fff;margin-top:10px; color: #fff;" onclick="echandoPatras();return false;">ATRAS</button>&nbsp;<button type="submit" class="btn" style="background-color:#428bca;border-color: #428bca; color: #fff;margin-top:10px; color: #fff;">CONTINUAR</button></div>
+                        <div class="col-xs-12"><a href="#personal"></a>
+                            <button type="button" class="btn"style="background-color:#428bca;border-color: #428bca; color: #fff;margin-top:10px; color: #fff;" onclick="echandoPatras();return false;">ATRAS</button>&nbsp;<button type="submit" class="btn btn-siguiente">CONTINUAR</button></div>
                     </div>
 
             </div>
@@ -1242,21 +1217,9 @@ border-bottom-right-radius: 5px;">
 
 
    </div>
-    </form>
- <script type="text/javascript" src="http://postlink.googlecode.com/svn/trunk/jquery.postlink.js"></script>
-                        <script type="text/javascript">
-                            $(document).ready(function() {
-                              //  $('.a_form').postlink();
-                            });
-                        </script>
-    <!-- Modal -->
-    <div class="modal fade" id="ventanamodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
+        <div id="TerminosCondiciones" style="display:none">
+                    <div class="row"> 
+                        <div class="col-xs-12">
                     <p>
 
                         <b>TERMINOS Y CONDICIONES APLICABLES</b><br><br>
@@ -1378,19 +1341,37 @@ border-bottom-right-radius: 5px;">
 
                     </p>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 </div>
-            </div>
-        </div>
-    </div>
+                    <div class="row" align="center">
+                        <div class="col-xs-12">
+                            <div id="myTab" class="row">
+                                <div>
+
+                                    <div class="col-xs-12"><a href="#personal"></a>
+                                        <button type="button" class="btn btn-tema" onclick="DesactivarTerminosPolSalud();return false;">ATRAS</button>&nbsp;<button type="submit" class="btn btn-siguiente">CONTINUAR</button></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    </div>
+    </form>
+ <script type="text/javascript" src="http://postlink.googlecode.com/svn/trunk/jquery.postlink.js"></script>
+                        <script type="text/javascript">
+                            $(document).ready(function() {
+                              //  $('.a_form').postlink();
+                            });
+                        </script>
+    
+                
 
 
 
 
 
     <script>
-        $('#dp1').pickadate({
+       /* $('#dp1').pickadate({
             selectYears: true,
             selectMonths: true,
             selectYears: 200,
@@ -1423,7 +1404,7 @@ border-bottom-right-radius: 5px;">
             selectMonths: true,
             selectYears: 200,
             format: 'dd/mm/yyyy'
-        })
+        })*/
 
 
 
@@ -1503,7 +1484,14 @@ border-bottom-right-radius: 5px;">
             });
 
         })
+                                $('.datatimer').datetimepicker({
+                                    format:'DD/MM/YYYY',
+                                    locale:'es',
+                                    maxDate: moment()
+                                });
 
+
+                
     </script>
 
 
