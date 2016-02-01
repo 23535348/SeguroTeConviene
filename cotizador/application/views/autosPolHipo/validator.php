@@ -60,26 +60,44 @@
 <td colspan=3; style="color:#000;">  <span style="font-weight:bold;">Compañía de seguros:</span> <?php echo ($company); ?></td>
 </tr>
 </table>
+            <table class="table table-bordered">
+                <tr style="color:#CC0000; font-weight:bold; text-align:center;">
+                    <td colspan=3; >   Información de la Póliza de Vida</td>
+                </tr>
+                <tr>
+                    <td colspan=3; >   <span style="font-weight:bold;">Suma Asegurada:</span> <?php echo ("B/. "); echo number_format($suma_asegurada_vida, "2", ".", ","); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=3; style="color:#000;"><span style="font-weight:bold;">Periodo máximo de la póliza:</span> <?php echo $termino;?>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=3; style="color:#000;"><span style="font-weight:bold;">Cobertura Principal:</span> Muerte por cualquier causa.
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=3; style="color:#000;"> <span style="font-weight:bold;">Coberturas Adicionales:</span> No aplica.</td>
+                </tr>
 
-<!-- 3ra tabla -->
+            </table>
+            <!--
+               <div class="col-lg-12"  >
+
+               </div>
+               <div class="col-lg-12" style="color:#000;">
+                 </div>
+               <div class="col-lg-12" style="color:#000;">
+                   </div>
+               <div class="col-lg-12" style="color:#000;">
+                     </div>
+               <div class="col-lg-12" style="color:#000;">
+
+               </div>
+
+
+    3ra tabla -->
 <div style=" margin: 0 auto 0 auto;">
-<table class="table table-bordered">
-<tr>
-<td colspan=3;></td>
-</tr>
-<tr>
-<td colspan=3; ></td>
-</tr>
-<tr>
-<td colspan=3; ></td>
-</tr>
-<tr>
-<td colspan=3; style="color:#000;"></td>
-</tr>
-<tr>
-<td colspan=3; style="color:#000;"></td>
-</tr>
-</table>
 
 <table class="table table-bordered">
 <tr>
@@ -124,57 +142,63 @@ Mínimo de B./ 250.00<br>
 </tr>
 </table>
 </div>
-<div style=" margin: 0 auto 0 auto; text-align:center;">
-<a  href="javascript:history.back(-1);"><button class="btn btn-primary">Regresar</button></a> <a href="javascript:window.history.go(-2);">
+<div style=" margin: 0 auto 0 auto;">
+    <div class="col-xs-12">
+        <div class="col-xs-4" align="center">
+            <a  href="javascript:history.back(-1);"><button class="btn btn-primary">Regresar</button></a>
 
+        </div>
+        <div class="col-xs-8" align="center">
+            <form name="form" id="form" action="complete" method="POST">
+                <input type="hidden" name="nombre" value="<?=$nombre?>">
+                <input type="hidden" name="apellido" value="<?=$apellido?>">
+                <input type="hidden" name="cedula" value="<?=$cedula?>">
+                <input type="hidden" name="company" value="<?=$company?>">
 
+                <input type="hidden" name="idaseguradora" value="<?=$idaseguradora?>">
+                <input type="hidden" name="sexo" value="<?=$sexo?>">
+                <input type="hidden" name="fecha_nac" value="<?=$fecha_nac?>">
+                <input type="hidden" name="email" value="<?=$email?>">
+                <input type="hidden" name="telefono" value="<?=$telefono?>">
+                <input type="hidden" name="celular" value="<?=$celular?>">
+                <input type="hidden" name="formadepago" value="<?=$formadepago?>">
+                <input type="hidden" name="suma_asegurada_vida" value="<?=$suma_asegurada_vida?>">
+                <input type="hidden" name="suma_asegurada_incendio" value="<?=$suma_asegurada_incendio?>">
 
+                <input type="hidden" name="prueba_aseguradora_especifica" value="<?=$prueba_aseguradora_especifica?>">
 
-
-
-
-
-
-<button class="btn btn-primary">Actualizar Datos</button></a>
-
-<form name="form" id="form" action="complete" method="POST">
-                                                    <input type="hidden" name="nombre" value="<?=$nombre?>">
-                                                    <input type="hidden" name="apellido" value="<?=$apellido?>">
-                                                    <input type="hidden" name="cedula" value="<?=$cedula?>">
-                                                    <input type="hidden" name="company" value="<?=$company?>">
-
-                                                    <input type="hidden" name="idaseguradora" value="<?=$idaseguradora?>">
-                                                    <input type="hidden" name="sexo" value="<?=$sexo?>">
-                                                    <input type="hidden" name="fecha_nac" value="<?=$fecha_nac?>">
-                                                    <input type="hidden" name="email" value="<?=$email?>">
-                                                    <input type="hidden" name="telefono" value="<?=$telefono?>">
-                                                    <input type="hidden" name="celular" value="<?=$celular?>">
-                                                    <input type="hidden" name="formadepago" value="<?=$formadepago?>">
-                                                    <input type="hidden" name="suma_asegurada_vida" value="<?=$suma_asegurada_vida?>">
-                                                    <input type="hidden" name="suma_asegurada_incendio" value="<?=$suma_asegurada_incendio?>">
-
-                                                    <input type="hidden" name="prueba_aseguradora_especifica" value="<?=$prueba_aseguradora_especifica?>">
-
-                                                    <input type="hidden" name="fumador" value="<?=$fumador?>">
-                                                    <input type="hidden" name="termino" value="<?=$termino?>">
-                                                     <input type="hidden" name="sector" value="<?=$sector?>">
-                                                    <input type="hidden" name="edad" value="<?=$edad?>">
-                                                     <input type="hidden" name="prima_vida" value="<?=$prima_vida?>">
-                                                    <input type="hidden" name="prima_incendio" value="<?=$prima_incendio?>">
-                                                    <input type="hidden" name="tipo_construccion" value="<?=$tipo_construccion?>">
-                                                    <input type="hidden" name="tipo_bien" value="<?=$tipo_bien?>">
-                                                    <input type="hidden" name="prima_planeada" value="<?=$prima_planeada?>">
-                                                    <input type="hidden" name="periodo_pago" value="1">
-                                                    <input type="hidden" name="estado_civil" value="<?=$estado_civil?>">
-               <!-- <a class="a_form"
+                <input type="hidden" name="fumador" value="<?=$fumador?>">
+                <input type="hidden" name="termino" value="<?=$termino?>">
+                <input type="hidden" name="sector" value="<?=$sector?>">
+                <input type="hidden" name="edad" value="<?=$edad?>">
+                <input type="hidden" name="prima_vida" value="<?=$prima_vida?>">
+                <input type="hidden" name="prima_incendio" value="<?=$prima_incendio?>">
+                <input type="hidden" name="tipo_construccion" value="<?=$tipo_construccion?>">
+                <input type="hidden" name="tipo_bien" value="<?=$tipo_bien?>">
+                <input type="hidden" name="prima_planeada" value="<?=$prima_planeada?>">
+                <input type="hidden" name="periodo_pago" value="1">
+                <input type="hidden" name="estado_civil" value="<?=$estado_civil?>">
+                <!-- <a class="a_form"
                    href="validator_a.php?nombre=<?php echo $nombre . " " . $pellido; ?>&ecivil=<?php echo $estado_civil; ?>&telefono=<?php echo $telefono; ?>&celular=<?php echo $celular; ?>&cedula=<?php echo $_POST['cedula']; ?>&correo=<?php echo $correo; ?>&fecha=<?php echo $fecha_nac; ?>&telefono=<?php echo $telefono; ?>&suma=<?php echo $suma_asegurada; ?>&termino=<?php echo $termino; ?>&fumador=<?php echo $_POST['fumador']; ?>&poliza=<?php echo($prima_planeada * 1.05); ?>&edad=<?php echo $edad; ?>&company=<?php echo $nombre_aseguradora; ?>&sexo=<?php echo $_POST["sexo"]; ?>&periodo_pago=<?php echo $periodo_pago; ?>&formadepago=<?php echo $_POST["formadepago"]; ?>">
                    </a>-->
-                    <button class="btn btn-warning btn-small" type="sumbit">
-                        Solicitar Póliza
-                        <i class="glyphicon glyphicon-circle-arrow-right"></i>
-                    </button>
+                <button class="btn btn-warning btn-small" type="sumbit">
+                    Solicitar Póliza
+                    <i class="glyphicon glyphicon-circle-arrow-right"></i>
+                </button>
 
-                                                </form>
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+  <!--  <a href="javascript:window.history.go(-2);">
+
+<button class="btn btn-primary">Actualizar Datos</button></a>-->
+
+
 
 
 

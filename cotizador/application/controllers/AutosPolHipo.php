@@ -266,7 +266,7 @@ class AutosPolHipo extends CI_Controller
                             foreach ($consultaIS_3 as $filas_factor3) {
                                 $factorIS_3 = $filas_factor3->factor;
                             }}else{
-                            $factorIS_2=1;
+                            $factorIS_3=1;
                         }
 
                         $prima_planeada = $prima_planeada * $factorIS_3;
@@ -599,6 +599,7 @@ class AutosPolHipo extends CI_Controller
     }
     public function complete()
     {
+        $this->load->library('Mailer');
         $this->load->library('FPDF');
         if(empty($_POST)) {
             redirect("Location: http://www.seguroteconviene.com/"); //Redirige
@@ -713,6 +714,30 @@ class AutosPolHipo extends CI_Controller
 
         $datos['mensaje_periodo_pago'] = $mensaje_periodo_pago;
 
+        if($this->input->post('sector')=="CIUDAD"){ $mensaje_sector = "Ciudad de Panamá";}
+        if($this->input->post('sector')=="COSTADELESTE"){ $mensaje_sector = "Costa del Este";}
+        if($this->input->post('sector')=="INTERIOR"){ $mensaje_sector = "Interior del País";}
+        if($this->input->post('bien')=="APTO"){ $mensaje_bien = "Apartamento";}
+        else { $mensaje_bien = "Casa";}
+        $datos['mensaje_bien']=$mensaje_bien;
+        $datos['mensaje_sector']=$mensaje_sector;
+        if($this->input->post('fumador')==0){ $mensaje_fumador = "No";} else { $mensaje_fumador = "Si";}
+        if($this->input->post('sexo')=="M"){ $mensaje_sexo = "Masculino";} else { $mensaje_sexo = "Femenino";}
+        if($this->input->post('periodo_pago')==1){ $mensaje_frecuencia_pago = "Anual";}
+        if($this->input->post('periodo_pago')==2){ $mensaje_frecuencia_pago = "Semestral";}
+        if($this->input->post('periodo_pago')==3){ $mensaje_frecuencia_pago = "Trimestral";}
+        if($this->input->post('periodo_pago')==4){ $mensaje_frecuencia_pago = "Mensual";}
+
+
+        //Datos para envio de correo
+        //info@stc.com
+        //info@stc.com
+        $datos['AddReplyTo']="deivisjose.d@gmail.com";
+        $datos['SetFrom']="deivisjose.d@gmail.com";
+        $datos['mensaje_fumador']=$mensaje_fumador;
+        $datos['mensaje_sexo']=$mensaje_sexo;
+        $datos['mensaje_frecuencia_pago']=$mensaje_frecuencia_pago;
+
 
 
 
@@ -771,7 +796,7 @@ class AutosPolHipo extends CI_Controller
                 }
         $datos['counter_coberturas']=$counter_coberturas;*/
 
-        $this->load->view('autosPolHipo/imprimir_terceros',$datos);
+        $this->load->view('autosPolHipo/imprimir_terceros_pdf',$datos);
     }
 
 
