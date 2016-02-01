@@ -26,7 +26,7 @@
     <div class="col-lg-3">
     </div>
     <div class="col-lg-6">
-        <div class="col-lg-12" style="color:#CC0000; font-weight:bold; text-align:center;">
+       <!-- <div class="col-lg-12" style="color:#CC0000; font-weight:bold; text-align:center;">
             Datos Generales
         </div>
         <div class="col-lg-12" style="color:#000;">
@@ -62,7 +62,7 @@
         </div>
         <div class="col-lg-12" style="color:#000;">
             <span style="font-weight:bold;">Coberturas Adicionales:</span> No aplica.
-        </div>
+        </div>-->
 
     <div style="text-align:left;  margin: 0 auto 0 auto;"><br>
         <p >Gracias por utilizar nuestros servicios.</p>
@@ -83,7 +83,7 @@
     </div>
     </div>
     </div>
-
+<?php $this->load->view('autosPolHipo/imprimir_terceros.php'); ?>
 <?
 $this->load->view('tema/footer.php');
 ?>
